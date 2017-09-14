@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="604.0" prefWidth="660.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="com.informationmanagement.viewer.MainMenuUIController">
+  <children>
+    <Pane layoutX="0.0" layoutY="0.0" prefHeight="604.0" prefWidth="660.0">
+      <children>
+        <TableView layoutX="26.0" layoutY="71.0" prefHeight="200.0" prefWidth="526.0">
+          <columns>
+            <TableColumn prefWidth="75.0" text="Column X" />
+            <TableColumn prefWidth="75.0" text="Column X" />
+            <TableColumn prefWidth="75.0" text="Column X" />
+            <TableColumn prefWidth="75.0" text="Column X" />
+            <TableColumn prefWidth="75.0" text="Column X" />
+            <TableColumn prefWidth="75.0" text="Column X" />
+            <TableColumn prefWidth="75.0" text="Column X" />
+          </columns>
+        </TableView>
+        <Button layoutX="563.0" layoutY="241.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" text="Button" />
+        <Button layoutX="563.0" layoutY="163.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" text="Button" />
+        <Button layoutX="563.0" layoutY="201.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" text="Button" />
+      </children>
+    </Pane>
+  </children>
+</AnchorPane>

@@ -3,20 +3,26 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package informationmanagement;
+package com.informationmanagement.viewer;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.stage.Stage;
 
 /**
  *
  * @author claudio
  */
-public class FXMLDocumentController implements Initializable {
+public class LoginUIController implements Initializable {
     
     @FXML
     private Label label;
@@ -28,14 +34,22 @@ public class FXMLDocumentController implements Initializable {
     }
     
     @FXML
-    private void clickedError(ActionEvent event){
-        System.out.println("Clicked");
+    private void clickedError(ActionEvent event) throws IOException{
+        //Changing scenes
+        System.out.println("Changing to main menu");
+        Node source = (Node) event.getSource();
+        
+        Stage stage = (Stage) source.getScene().getWindow();
+        
+        Parent menu = FXMLLoader.load(getClass().getResource("MainMenuUI.fxml"));
+        Scene scene = new Scene(menu);
+        stage.setScene(scene);
     }
     
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        
     }    
     
 }

@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package informationmanagement;
+package com.informationmanagement.viewer;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -19,19 +19,21 @@ public class InformationManagement extends Application {
     
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("FXMLDocument.fxml"));
+        Parent login = FXMLLoader.load(getClass().getResource("LoginUI.fxml"));
         
-        Scene scene = new Scene(root);
+        Scene scene = new Scene(login);
         stage.setScene(scene);
         stage.setResizable(false);
         stage.setTitle("FluxI! - Management of Information");
         stage.show();
+        
     }
    /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
         launch(args);
+        
     }
     
 }
