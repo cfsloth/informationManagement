@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.collections.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.shape.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="604.0" prefWidth="660.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="com.informationmanagement.viewer.WarningUIController">
+  <children>
+    <Pane layoutX="0.0" layoutY="0.0" prefHeight="604.0" prefWidth="660.0">
+      <children>
+        <ImageView fitHeight="604.0" fitWidth="660.0" layoutX="0.0" layoutY="0.0" opacity="1.0" pickOnBounds="true" preserveRatio="false">
+          <effect>
+            <GaussianBlur radius="13.0" />
+          </effect>
+          <image>
+            <Image url="@../images/mountain-792815_1920.jpg" />
+          </image>
+        </ImageView>
+        <TitledPane animated="false" layoutX="31.0" layoutY="39.0" opacity="0.9" prefHeight="271.0" prefWidth="603.0" style="" text="Mensagens de Aviso" textFill="BLACK">
+          <content>
+            <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+              <children>
+                <TableView blendMode="DARKEN" editable="false" layoutX="14.0" layoutY="14.0" opacity="0.8" prefHeight="219.0" prefWidth="481.0" style="" tableMenuButtonVisible="true">
+                  <columns>
+                    <TableColumn editable="false" maxWidth="5000.0" minWidth="10.0" prefWidth="114.0" resizable="false" sortable="false" text="Remetente" />
+                    <TableColumn editable="false" maxWidth="5000.0" minWidth="10.0" prefWidth="112.0" resizable="false" sortable="false" text="Assunto" />
+                    <TableColumn editable="false" maxWidth="5000.0" minWidth="10.0" prefWidth="125.0" resizable="false" sortable="false" text="Gravidade" />
+                    <TableColumn editable="false" maxWidth="5000.0" minWidth="10.0" prefWidth="129.0" resizable="false" sortable="false" style="" text="Data" />
+                  </columns>
+                </TableView>
+                <Button blendMode="DARKEN" layoutX="503.0" layoutY="192.0" mnemonicParsing="false" opacity="0.8" prefHeight="39.0" prefWidth="90.0" text="Visualizar">
+                  <textFill>
+                    <Color blue="0.600" green="0.240" red="0.000" fx:id="x1" />
+                  </textFill>
+                </Button>
+                <Button blendMode="DARKEN" cache="false" cancelButton="false" defaultButton="false" focusTraversable="true" layoutX="503.0" layoutY="142.0" mnemonicParsing="false" onAction="#closeWarning" opacity="0.8" prefHeight="39.0" prefWidth="90.0" text="Concluir" underline="false" visible="true">
+                  <textFill>
+                    <Color blue="0.000" green="0.600" red="0.192" fx:id="x2" />
+                  </textFill>
+                </Button>
+              </children>
+            </AnchorPane>
+          </content>
+        </TitledPane>
+        <TitledPane animated="false" focusTraversable="true" layoutX="31.0" layoutY="338.0" opacity="0.9" prefHeight="245.0" prefWidth="602.9998779296875" text="Criar aviso">
+          <content>
+            <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+              <children>
+                <TextField blendMode="EXCLUSION" layoutX="14.0" layoutY="14.0" opacity="0.6" prefWidth="253.0" promptText="Assunto" style="-fx-text-fill: white;" />
+                <TextArea blendMode="EXCLUSION" layoutX="14.0" layoutY="43.0" opacity="0.6" prefHeight="164.0" prefWidth="253.0" promptText="Descreva o problema" style="-fx-text-fill: white ;" wrapText="true" />
+                <TextField alignment="CENTER_LEFT" blendMode="EXCLUSION" editable="false" layoutX="289.0" layoutY="14.0" opacity="0.6" prefWidth="206.0" promptText="Remetente" style="-fx-text-fill: white;" />
+                <Button blendMode="DARKEN" layoutX="503.0" layoutY="10.0" mnemonicParsing="false" opacity="0.8" prefHeight="31.0" prefWidth="90.0001220703125" text="Escolher" textFill="$x1" />
+                <ComboBox blendMode="EXCLUSION" layoutX="290.0" layoutY="56.0" opacity="0.6" pickOnBounds="false" prefWidth="304.0">
+                  <items>
+                    <FXCollections fx:factory="observableArrayList">
+                      <String fx:value="Item 1" />
+                      <String fx:value="Item 2" />
+                      <String fx:value="Item 3" />
+                    </FXCollections>
+                  </items>
+                </ComboBox>
+                <Button layoutX="289.0" layoutY="116.0" mnemonicParsing="false" onAction="#submitWarning" prefHeight="91.0" prefWidth="304.0" text="Submeter" textFill="$x2" />
+              </children>
+            </AnchorPane>
+          </content>
+        </TitledPane>
+        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="BLACK" height="21.0" layoutX="0.0" layoutY="0.0" opacity="0.7" stroke="BLACK" strokeType="INSIDE" width="660.0" />
+        <ImageView fitHeight="22.0" fitWidth="29.33333243093183" layoutX="638.0" layoutY="-1.0" onTouchPressed="#logOut" onTouchReleased="#logOut" pickOnBounds="true" preserveRatio="true">
+          <image>
+            <Image url="@../images/close_red.png" />
+          </image>
+        </ImageView>
+        <Label layoutX="10.0" layoutY="-1.0" minHeight="13.999908447265625" prefHeight="21.0" prefWidth="335.0" text="Utilizador :" textFill="WHITE" />
+        <Label layoutX="411.0" layoutY="-1.0" prefHeight="21.000099182128906" prefWidth="227.0" text="Tipo de Utilizador :" textFill="WHITE" />
+      </children>
+    </Pane>
+  </children>
+</AnchorPane>

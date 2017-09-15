@@ -20,7 +20,6 @@ public class InformationManagement extends Application {
     @Override
     public void start(Stage stage) throws Exception {
         Parent login = FXMLLoader.load(getClass().getResource("LoginUI.fxml"));
-        
         Scene scene = new Scene(login);
         stage.setScene(scene);
         stage.setResizable(false);

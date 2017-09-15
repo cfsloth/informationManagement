@@ -34,14 +34,14 @@ public class LoginUIController implements Initializable {
     }
     
     @FXML
-    private void clickedError(ActionEvent event) throws IOException{
+    private void loginUI(ActionEvent event) throws IOException{
         //Changing scenes
-        System.out.println("Changing to main menu");
+        System.out.println("Changing to WarningUI");
         Node source = (Node) event.getSource();
         
         Stage stage = (Stage) source.getScene().getWindow();
         
-        Parent menu = FXMLLoader.load(getClass().getResource("MainMenuUI.fxml"));
+        Parent menu = FXMLLoader.load(getClass().getResource("WarningUI.fxml"));
         Scene scene = new Scene(menu);
         stage.setScene(scene);
     }

@@ -28,7 +28,7 @@
       <children>
         <TextField disable="false" focusTraversable="true" layoutX="42.0" layoutY="253.0" opacity="1.0" prefHeight="40.1326904296875" prefWidth="229.0001220703125" promptText="Username" style="-fx-background-color: black ;&#10;&#10;" visible="true" />
         <PasswordField layoutX="42.0" layoutY="304.0" prefHeight="40.1326904296875" prefWidth="229.0001220703125" promptText="Password" style="-fx-background-color: black ;" />
-        <Button focusTraversable="true" layoutX="42.0" layoutY="388.0" mnemonicParsing="false" onAction="#clickedError" prefHeight="47.132598876953125" prefWidth="229.0001220703125" style="-fx-background-color : #78c7c7 ;&#10;" text="Log In" textFill="WHITE" wrapText="false">
+        <Button focusTraversable="true" layoutX="42.0" layoutY="388.0" mnemonicParsing="false" onAction="#loginUI" prefHeight="47.132598876953125" prefWidth="229.0001220703125" style="-fx-background-color : #78c7c7 ;&#10;" text="Log In" textFill="WHITE" wrapText="false">
           <font>
             <Font size="15.0" fx:id="x1" />
           </font>

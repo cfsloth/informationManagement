@@ -14,7 +14,7 @@ import javafx.fxml.Initializable;
  *
  * @author claudio
  */
-public class MainMenuUIController implements Initializable {
+public class AdminMenuUIController implements Initializable {
 
     /**
      * Initializes the controller class.
