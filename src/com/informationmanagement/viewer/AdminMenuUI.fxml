@@ -28,15 +28,49 @@
           </image>
         </ImageView>
         <Label layoutX="7.0" layoutY="-1.0" minHeight="13.999908447265625" prefHeight="21.0" prefWidth="335.0" text="Utilizador:" textFill="WHITE" />
-        <Label layoutX="392.0" layoutY="-1.0" prefHeight="21.000099182128906" prefWidth="227.0" text="Tipo de Utilizador : Administrador" textFill="WHITE" />
+        <Label layoutX="367.0" layoutY="0.0" prefHeight="21.000099182128906" prefWidth="227.0" text="Tipo de Utilizador : Administrador" textFill="WHITE" />
+        <ImageView fitHeight="21.000244140625" fitWidth="21.000244140625" layoutX="595.0" layoutY="0.0" pickOnBounds="true" preserveRatio="true">
+          <image>
+            <Image url="@../images/profile.png" />
+          </image>
+        </ImageView>
       </children>
     </Pane>
     <Pane layoutX="179.0" layoutY="40.0" opacity="0.75" prefHeight="536.0" prefWidth="282.0" style="-fx-background-color: #313330;">
       <children>
         <Rectangle arcHeight="5.0" arcWidth="5.0" fill="BLACK" height="13.999899864196777" layoutX="0.0" layoutY="0.0" opacity="1.0" smooth="true" stroke="BLACK" strokeType="INSIDE" strokeWidth="1.0" width="282.0" />
-        <Button layoutX="14.0" layoutY="465.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="254.0" style="-fx-background-color : #78c7c7 ;" text="User's Page" textFill="WHITE" />
-        <Button layoutX="14.0" layoutY="396.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="254.0" style="-fx-background-color : #78c7c7 ;" text="Warning Page" textFill="WHITE" />
-        <Button layoutX="14.0" layoutY="327.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="254.0" style="-fx-background-color : #78c7c7 " text="Settings" textFill="WHITE" />
+        <Button layoutX="14.0" layoutY="465.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="254.0" style="-fx-background-color : #78c7c7 ;" text="    User's Page" textFill="WHITE">
+          <graphic>
+            <ImageView fitHeight="49.0" fitWidth="49.0" pickOnBounds="true" preserveRatio="true" style=" " x="0.0">
+              <image>
+                <Image url="@../images/admin3.png" />
+              </image>
+            </ImageView>
+          </graphic>
+        </Button>
+        <Button layoutX="14.0" layoutY="396.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="254.0" style="-fx-background-color : #78c7c7 ;" text="Warning Page" textFill="WHITE">
+          <graphic>
+            <ImageView fitHeight="49.0" fitWidth="49.0" pickOnBounds="true" preserveRatio="true">
+              <image>
+                <Image url="@../images/warning.png" />
+              </image>
+            </ImageView>
+          </graphic>
+        </Button>
+        <Button layoutX="14.0" layoutY="327.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="254.0" style="-fx-background-color : #78c7c7 " text="         Settings" textFill="WHITE">
+          <graphic>
+            <ImageView fitHeight="49.0" fitWidth="49.0" pickOnBounds="true" preserveRatio="true">
+              <image>
+                <Image url="@../images/admin2.png" />
+              </image>
+            </ImageView>
+          </graphic>
+        </Button>
+        <ImageView fitHeight="188.0" fitWidth="188.0" layoutX="47.0" layoutY="55.0" opacity="0.9" pickOnBounds="true" preserveRatio="true">
+          <image>
+            <Image url="@../images/settings-icon.png" />
+          </image>
+        </ImageView>
       </children>
     </Pane>
   </children>

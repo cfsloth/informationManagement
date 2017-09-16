@@ -15,7 +15,7 @@
   <children>
     <Pane layoutX="0.0" layoutY="0.0" prefHeight="604.0" prefWidth="660.0">
       <children>
-        <ImageView fitHeight="604.0" fitWidth="660.0" layoutX="0.0" layoutY="0.0" opacity="1.0" pickOnBounds="true" preserveRatio="false">
+        <ImageView fitHeight="604.0" fitWidth="660.0" layoutX="0.0" layoutY="0.0" opacity="1.0" pickOnBounds="true" preserveRatio="false" visible="true">
           <effect>
             <GaussianBlur radius="13.0" />
           </effect>
@@ -78,7 +78,12 @@
           </image>
         </ImageView>
         <Label layoutX="10.0" layoutY="-1.0" minHeight="13.999908447265625" prefHeight="21.0" prefWidth="335.0" text="Utilizador :" textFill="WHITE" />
-        <Label layoutX="411.0" layoutY="-1.0" prefHeight="21.000099182128906" prefWidth="227.0" text="Tipo de Utilizador :" textFill="WHITE" />
+        <Label layoutX="384.0" layoutY="-1.0" prefHeight="21.000099182128906" prefWidth="227.0" text="Tipo de Utilizador :" textFill="WHITE" />
+        <ImageView fitHeight="21.0" fitWidth="21.0" layoutX="615.0" layoutY="0.0" pickOnBounds="true" preserveRatio="true">
+          <image>
+            <Image url="@../images/profile.png" />
+          </image>
+        </ImageView>
       </children>
     </Pane>
   </children>
