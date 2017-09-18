@@ -4,14 +4,76 @@
 <?import java.util.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
 
 <AnchorPane id="AnchorPane" prefHeight="604.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="com.informationmanagement.viewer.UserUIController">
   <children>
-    <Pane layoutX="0.0" layoutY="0.0" prefHeight="604.0" prefWidth="600.0">
+    <Pane layoutX="0.0" layoutY="0.0" prefHeight="604.0" prefWidth="640.0">
       <children>
-        <Pane layoutX="43.0" layoutY="41.0" opacity="0.61" prefHeight="220.0" prefWidth="515.0" style="-fx-background-color: black;" />
+        <ImageView fitHeight="604.0" fitWidth="640.0" layoutX="0.0" layoutY="0.0" opacity="1.0" pickOnBounds="true" preserveRatio="false">
+          <effect>
+            <GaussianBlur radius="12.0" />
+          </effect>
+          <image>
+            <Image url="@../images/forest.jpg" />
+          </image>
+        </ImageView>
+        <Pane layoutX="107.0" layoutY="48.0" opacity="0.75" prefHeight="222.0" prefWidth="454.0" style="-fx-background-color: #313330;">
+          <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="BLACK" height="14.0" layoutX="0.0" layoutY="0.0" stroke="BLACK" strokeType="INSIDE" width="454.0" />
+            <ImageView blendMode="SRC_ATOP" fitHeight="149.0" fitWidth="198.66666666666666" layoutX="27.0" layoutY="42.0" pickOnBounds="true" preserveRatio="true">
+              <image>
+                <Image url="@../images/profile2.png" />
+              </image>
+            </ImageView>
+            <Label layoutX="14.0" layoutY="0.0" minHeight="12.0" prefHeight="13.999900000002526" prefWidth="440.0" text="User Information" textFill="WHITE" />
+            <TextField disable="true" editable="false" layoutX="197.0" layoutY="42.0" prefWidth="243.0" promptText="User's Name" style="-fx-background-color: black&#10;" />
+            <TextField disable="true" editable="false" layoutX="197.0" layoutY="118.0" prefWidth="243.0" promptText="Department" style="-fx-background-color: black" />
+            <TextField disable="true" editable="false" layoutX="197.0" layoutY="159.0" prefWidth="243.0" promptText="User's Position" style="-fx-background-color: black" />
+            <TextField disable="true" editable="false" layoutX="197.0" layoutY="80.0" prefWidth="243.0" promptText="User's Email" style="-fx-background-color: black" />
+          </children>
+        </Pane>
+        <Pane layoutX="107.0" layoutY="308.0" opacity="0.75" prefHeight="163.99997792968497" prefWidth="454.0" style="-fx-background-color: #313330;">
+          <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="BLACK" height="14.0" layoutX="0.0" layoutY="0.0" stroke="BLACK" strokeType="INSIDE" width="454.0" />
+            <Label layoutX="14.0" layoutY="0.0" prefWidth="440.0" text="Change Password" textFill="WHITE" />
+            <TextField layoutX="27.0" layoutY="42.0" prefWidth="247.0" promptText="Insert Old Password" style="-fx-background-color: black " />
+            <TextField layoutX="27.0" layoutY="79.0" prefWidth="247.0" promptText="Insert New Password" style="-fx-background-color: black " />
+            <TextField layoutX="27.0" layoutY="117.0" prefWidth="247.0" promptText="Insert New Password Again" style="-fx-background-color: black ;" />
+            <ImageView fitHeight="87.75" fitWidth="117.0" layoutX="325.0" layoutY="42.0" pickOnBounds="true" preserveRatio="true">
+              <image>
+                <Image url="@../images/678134-sign-check-512.png" />
+              </image>
+            </ImageView>
+          </children>
+        </Pane>
+        <ImageView fitHeight="74.0" fitWidth="74.0" layoutX="552.0" layoutY="505.0" opacity="0.75" pickOnBounds="true" preserveRatio="true" rotate="0.0">
+          <image>
+            <Image url="@../images/green-back-button-icon-65921.png" />
+          </image>
+        </ImageView>
       </children>
     </Pane>
+    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="BLACK" height="22.0" layoutX="0.0" layoutY="0.0" opacity="0.7" stroke="BLACK" strokeType="INSIDE" width="640.0" />
+    <ImageView disable="true" fitHeight="21.0" fitWidth="21.000099182128906" focusTraversable="true" layoutX="619.0" layoutY="1.0" pickOnBounds="true" preserveRatio="false" smooth="true">
+      <image>
+        <Image url="@../images/close_red.png" />
+      </image>
+    </ImageView>
+    <Label layoutX="7.0" layoutY="2.0" minHeight="13.999908447265625" prefHeight="21.0" prefWidth="335.0" text="Utilizador:" textFill="WHITE" />
+    <Label layoutX="341.0" layoutY="2.0" prefHeight="21.000099182128906" prefWidth="227.0" text="Tipo de Utilizador :" textFill="WHITE" />
+    <ImageView fitHeight="21.0" fitWidth="21.0" layoutX="595.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+        <Image url="@../images/profile.png" />
+      </image>
+    </ImageView>
+    <ImageView fitHeight="21.0" fitWidth="21.0" layoutX="569.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+        <Image url="@../images/home-icon.png" />
+      </image>
+    </ImageView>
   </children>
 </AnchorPane>

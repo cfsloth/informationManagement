@@ -15,41 +15,40 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
 /**
+ * FXML Controller class
  *
  * @author claudio
  */
-public class LoginUIController implements Initializable {
-    
+public class MenuUIController implements Initializable {
+
+    /**
+     * Initializes the controller class.
+     */
+    @Override
+    public void initialize(URL url, ResourceBundle rb) {
+        
+    }
+
     @FXML
-    private Label label;
-    
-    @FXML
-    private void handleButtonAction(ActionEvent event) {
-        System.out.println("You clicked me!");
-        label.setText("Hello World!");
+    private void printDone(ActionEvent envent) throws IOException{
+       
+        
     }
     
     @FXML
-    private void loginUI(ActionEvent event) throws IOException{
+    private void warningUI(ActionEvent event) throws IOException{
         //Changing scenes
-        System.out.println("Changing to MenuUI");
+        System.out.println("Changing to WarningUI");
         Node source = (Node) event.getSource();
         
         Stage stage = (Stage) source.getScene().getWindow();
         
-        Parent menu = FXMLLoader.load(getClass().getResource("MenuUI.fxml"));
+        Parent menu = FXMLLoader.load(getClass().getResource("WarningUI.fxml"));
         Scene scene = new Scene(menu);
         stage.setScene(scene);
     }
-    
-    
-    @Override
-    public void initialize(URL url, ResourceBundle rb) {
-        
-    }    
     
 }

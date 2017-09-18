@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.shape.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="604.0" prefWidth="640.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="com.informationmanagement.viewer.AdminMenuUIController">
+<AnchorPane id="AnchorPane" prefHeight="604.0" prefWidth="640.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="com.informationmanagement.viewer.MenuUIController">
   <children>
     <Pane layoutX="0.0" layoutY="0.0" prefHeight="604.0" prefWidth="640.0">
       <children>
@@ -21,15 +21,15 @@
             <Image url="@../images/nature-forest-trees-fog.jpeg" />
           </image>
         </ImageView>
-        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="BLACK" height="21.0" layoutX="0.0" layoutY="-1.0" opacity="0.7" stroke="BLACK" strokeType="INSIDE" width="640.0" />
+        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="BLACK" height="21.000099182128906" layoutX="0.0" layoutY="-1.0" opacity="0.7" stroke="BLACK" strokeType="INSIDE" width="640.0" />
         <ImageView disable="true" fitHeight="21.000099999997474" fitWidth="21.000099999997474" focusTraversable="true" layoutX="619.0" layoutY="0.0" pickOnBounds="true" preserveRatio="false" smooth="true">
           <image>
             <Image url="@../images/close_red.png" />
           </image>
         </ImageView>
         <Label layoutX="7.0" layoutY="-1.0" minHeight="13.999908447265625" prefHeight="21.0" prefWidth="335.0" text="Utilizador:" textFill="WHITE" />
-        <Label layoutX="367.0" layoutY="0.0" prefHeight="21.000099182128906" prefWidth="227.0" text="Tipo de Utilizador : Administrador" textFill="WHITE" />
-        <ImageView fitHeight="21.000244140625" fitWidth="21.000244140625" layoutX="595.0" layoutY="0.0" pickOnBounds="true" preserveRatio="true">
+        <Label layoutX="342.0" layoutY="-1.0" prefHeight="21.000099182128906" prefWidth="227.0" text="Tipo de Utilizador : Administrador" textFill="WHITE" />
+        <ImageView fitHeight="21.0" fitWidth="21.0" layoutX="595.0" layoutY="0.0" onMouseClicked="#printDone" pickOnBounds="true" preserveRatio="true">
           <image>
             <Image url="@../images/profile.png" />
           </image>
@@ -48,7 +48,7 @@
             </ImageView>
           </graphic>
         </Button>
-        <Button layoutX="14.0" layoutY="396.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="254.0" style="-fx-background-color : #78c7c7 ;" text="Warning Page" textFill="WHITE">
+        <Button layoutX="14.0" layoutY="396.0" mnemonicParsing="false" onAction="#warningUI" prefHeight="57.0" prefWidth="254.0" style="-fx-background-color : #78c7c7 ;" text="Warning Page" textFill="WHITE">
           <graphic>
             <ImageView fitHeight="49.0" fitWidth="49.0" pickOnBounds="true" preserveRatio="true">
               <image>
