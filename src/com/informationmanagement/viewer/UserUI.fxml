@@ -14,9 +14,6 @@
     <Pane layoutX="0.0" layoutY="0.0" prefHeight="604.0" prefWidth="640.0">
       <children>
         <ImageView fitHeight="604.0" fitWidth="640.0" layoutX="0.0" layoutY="0.0" opacity="1.0" pickOnBounds="true" preserveRatio="false">
-          <effect>
-            <GaussianBlur radius="12.0" />
-          </effect>
           <image>
             <Image url="@../images/forest.jpg" />
           </image>
@@ -58,22 +55,25 @@
       </children>
     </Pane>
     <Rectangle arcHeight="5.0" arcWidth="5.0" fill="BLACK" height="22.0" layoutX="0.0" layoutY="0.0" opacity="0.7" stroke="BLACK" strokeType="INSIDE" width="640.0" />
-    <ImageView disable="true" fitHeight="21.0" fitWidth="21.000099182128906" focusTraversable="true" layoutX="619.0" layoutY="1.0" pickOnBounds="true" preserveRatio="false" smooth="true">
-      <image>
-        <Image url="@../images/close_red.png" />
-      </image>
-    </ImageView>
+    <Button layoutX="617.0" layoutY="-1.0" maxHeight="23.0" maxWidth="23.0" minHeight="23.0" minWidth="23.0" mnemonicParsing="false" onAction="#logOut" prefHeight="23.0" prefWidth="23.0" style="-fx-border-color: transparent;&#10;    -fx-border-width: 0;&#10;    -fx-background-radius: 0;&#10;    -fx-background-color: transparent;&#10;    -fx-font-family:&quot;Segoe UI&quot;, Helvetica, Arial, sans-serif;&#10;    -fx-font-size: 1em; /* 12 */&#10;    -fx-text-fill: #828282;" text="">
+      <graphic>
+        <ImageView disable="true" fitHeight="21.0" fitWidth="21.000099182128906" focusTraversable="true" pickOnBounds="true" preserveRatio="false" smooth="true">
+          <image>
+            <Image url="@../images/close_red.png" />
+          </image>
+        </ImageView>
+      </graphic>
+    </Button>
     <Label layoutX="7.0" layoutY="2.0" minHeight="13.999908447265625" prefHeight="21.0" prefWidth="335.0" text="Utilizador:" textFill="WHITE" />
     <Label layoutX="341.0" layoutY="2.0" prefHeight="21.000099182128906" prefWidth="227.0" text="Tipo de Utilizador :" textFill="WHITE" />
-    <ImageView fitHeight="21.0" fitWidth="21.0" layoutX="595.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
-      <image>
-        <Image url="@../images/profile.png" />
-      </image>
-    </ImageView>
-    <ImageView fitHeight="21.0" fitWidth="21.0" layoutX="569.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
-      <image>
-        <Image url="@../images/home-icon.png" />
-      </image>
-    </ImageView>
+    <Button layoutX="593.0" layoutY="0.0" maxHeight="22.0" maxWidth="22.0" minHeight="22.0" minWidth="22.0" mnemonicParsing="false" onAction="#goHome" prefHeight="22.0" prefWidth="22.0" style="-fx-border-color: transparent;&#10;    -fx-border-width: 0;&#10;    -fx-background-radius: 0;&#10;    -fx-background-color: transparent;&#10;    -fx-font-family:&quot;Segoe UI&quot;, Helvetica, Arial, sans-serif;&#10;    -fx-font-size: 1em; /* 12 */&#10;    -fx-text-fill: #828282;" text="">
+      <graphic>
+        <ImageView fitHeight="21.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
+          <image>
+            <Image url="@../images/home-icon.png" />
+          </image>
+        </ImageView>
+      </graphic>
+    </Button>
   </children>
 </AnchorPane>

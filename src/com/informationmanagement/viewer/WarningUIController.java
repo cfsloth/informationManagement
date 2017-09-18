@@ -49,6 +49,43 @@ public class WarningUIController implements Initializable {
         } 
     }
     
+     @FXML
+    private void goHome(ActionEvent event) throws IOException{
+        Alert alert = new Alert(AlertType.CONFIRMATION);
+        alert.setTitle("Go to Main Menu");
+        alert.setHeaderText("Deseja mesmo ir para o Menu Inicial?");
+        alert.setContentText("Se sair do sistema, dados que não tenham sido \nguardados serão perdidos.");
+        Optional<ButtonType> result = alert.showAndWait();
+        if (result.get() == ButtonType.OK){
+            // ... user chose OK
+            System.out.println("Changing to Main Menu");
+            Node source = (Node) event.getSource();
+            Stage stage = (Stage) source.getScene().getWindow();
+            Parent menu = FXMLLoader.load(getClass().getResource("MenuUI.fxml"));
+            Scene scene = new Scene(menu);
+            stage.setScene(scene);
+        } 
+    }
+    
+     @FXML
+    private void goToUserPage(ActionEvent event) throws IOException{
+        Alert alert = new Alert(AlertType.CONFIRMATION);
+        alert.setTitle("Go to User Page");
+        alert.setHeaderText("Deseja mesmo ir para o seu perfil?");
+        alert.setContentText("Se sair do sistema, dados que não tenham sido \nguardados serão perdidos.");
+        Optional<ButtonType> result = alert.showAndWait();
+        if (result.get() == ButtonType.OK){
+            // ... user chose OK
+            System.out.println("Changing to UserUI");
+            Node source = (Node) event.getSource();
+            Stage stage = (Stage) source.getScene().getWindow();
+            Parent menu = FXMLLoader.load(getClass().getResource("UserUI.fxml"));
+            Scene scene = new Scene(menu);
+            stage.setScene(scene);
+        } 
+    }
+    
+    
     @FXML
     private void closeWarning(ActionEvent event){
         Alert alert = new Alert(AlertType.CONFIRMATION);
@@ -76,6 +113,7 @@ public class WarningUIController implements Initializable {
             
         }
     }
+    
     
     
     
