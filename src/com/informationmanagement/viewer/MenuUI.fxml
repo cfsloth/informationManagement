@@ -15,25 +15,33 @@
       <children>
         <ImageView fitHeight="604.0" fitWidth="640.0" layoutX="0.0" layoutY="0.0" pickOnBounds="true" preserveRatio="false">
           <effect>
-            <GaussianBlur />
+            <GaussianBlur radius="12.0" />
           </effect>
           <image>
             <Image url="@../images/nature-forest-trees-fog.jpeg" />
           </image>
         </ImageView>
         <Rectangle arcHeight="5.0" arcWidth="5.0" fill="BLACK" height="21.000099182128906" layoutX="0.0" layoutY="-1.0" opacity="0.7" stroke="BLACK" strokeType="INSIDE" width="640.0" />
-        <ImageView disable="true" fitHeight="21.000099999997474" fitWidth="21.000099999997474" focusTraversable="true" layoutX="619.0" layoutY="0.0" pickOnBounds="true" preserveRatio="false" smooth="true">
-          <image>
-            <Image url="@../images/close_red.png" />
-          </image>
-        </ImageView>
         <Label layoutX="7.0" layoutY="-1.0" minHeight="13.999908447265625" prefHeight="21.0" prefWidth="335.0" text="Utilizador:" textFill="WHITE" />
         <Label layoutX="342.0" layoutY="-1.0" prefHeight="21.000099182128906" prefWidth="227.0" text="Tipo de Utilizador : Administrador" textFill="WHITE" />
-        <ImageView fitHeight="21.0" fitWidth="21.0" layoutX="595.0" layoutY="0.0" onMouseClicked="#printDone" pickOnBounds="true" preserveRatio="true">
-          <image>
-            <Image url="@../images/profile.png" />
-          </image>
-        </ImageView>
+        <Button layoutX="618.0" layoutY="-1.0" maxHeight="22.0" maxWidth="22.0" minHeight="22.0" minWidth="22.0" mnemonicParsing="false" onAction="#logOut" prefHeight="22.0" prefWidth="22.0" style="-fx-border-color: transparent;&#10;    -fx-border-width: 0;&#10;    -fx-background-radius: 0;&#10;    -fx-background-color: transparent;&#10;    -fx-font-family:&quot;Segoe UI&quot;, Helvetica, Arial, sans-serif;&#10;    -fx-font-size: 1em; /* 12 */&#10;    -fx-text-fill: #828282;" text="">
+          <graphic>
+            <ImageView disable="true" fitHeight="21.000099999997474" fitWidth="21.000099999997474" focusTraversable="true" pickOnBounds="true" preserveRatio="false" smooth="true">
+              <image>
+                <Image url="@../images/close_red.png" />
+              </image>
+            </ImageView>
+          </graphic>
+        </Button>
+        <Button layoutX="593.0" layoutY="-1.0" maxHeight="22.0" maxWidth="22.0" minHeight="22.0" minWidth="22.0" mnemonicParsing="false" onAction="#goToUserPage" prefHeight="22.0" prefWidth="22.0" style="-fx-border-color: transparent;&#10;    -fx-border-width: 0;&#10;    -fx-background-radius: 0;&#10;    -fx-background-color: transparent;&#10;    -fx-font-family:&quot;Segoe UI&quot;, Helvetica, Arial, sans-serif;&#10;    -fx-font-size: 1em; /* 12 */&#10;    -fx-text-fill: #828282;" text="">
+          <graphic>
+            <ImageView fitHeight="21.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
+              <image>
+                <Image url="@../images/profile.png" />
+              </image>
+            </ImageView>
+          </graphic>
+        </Button>
       </children>
     </Pane>
     <Pane layoutX="179.0" layoutY="40.0" opacity="0.75" prefHeight="536.0" prefWidth="282.0" style="-fx-background-color: #313330;">
@@ -48,7 +56,7 @@
             </ImageView>
           </graphic>
         </Button>
-        <Button layoutX="14.0" layoutY="396.0" mnemonicParsing="false" onAction="#warningUI" prefHeight="57.0" prefWidth="254.0" style="-fx-background-color : #78c7c7 ;" text="Warning Page" textFill="WHITE">
+        <Button layoutX="14.0" layoutY="396.0" mnemonicParsing="false" onAction="#goToWarningPage" prefHeight="57.0" prefWidth="254.0" style="-fx-background-color : #78c7c7 ;" text="Warning Page" textFill="WHITE">
           <graphic>
             <ImageView fitHeight="49.0" fitWidth="49.0" pickOnBounds="true" preserveRatio="true">
               <image>

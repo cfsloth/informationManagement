@@ -14,6 +14,9 @@
     <Pane layoutX="0.0" layoutY="0.0" prefHeight="604.0" prefWidth="640.0">
       <children>
         <ImageView fitHeight="604.0" fitWidth="640.0" layoutX="0.0" layoutY="0.0" opacity="1.0" pickOnBounds="true" preserveRatio="false">
+          <effect>
+            <GaussianBlur radius="12.0" />
+          </effect>
           <image>
             <Image url="@../images/forest.jpg" />
           </image>
