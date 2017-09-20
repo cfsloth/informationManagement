@@ -54,7 +54,7 @@ public class UserUIController implements Initializable {
         Optional<ButtonType> result = alert.showAndWait();
         if (result.get() == ButtonType.OK){
             // ... user chose OK
-            System.out.println("Changing to Main Menu");
+            System.out.println("Changing to Main Menu\n");
             Node source = (Node) event.getSource();
             Stage stage = (Stage) source.getScene().getWindow();
             Parent menu = FXMLLoader.load(getClass().getResource("MenuUI.fxml"));
