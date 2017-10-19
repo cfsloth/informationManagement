@@ -6,4 +6,4 @@ A program to manage information in a company with a centralized database.
 - Using JavaFX just for trying
 - Using the MVC (Model - Viewer - Controller) pattern
 - Start implementing other object oriented pattern
-- Start using teste library like jUnit
+- Start using a test library like jUnit
