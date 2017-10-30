@@ -23,11 +23,16 @@ public class DatabaseConection {
         Class.forName("org.postgresql.Driver");
         c = DriverManager
             .getConnection("jdbc:postgresql://localhost:5432/InformationManagement",
-            "postgre", "claudiofilipe21");
+            "postgres", "claudiofilipe21");
     }
     
     public ResultSet execSelect(String query) throws SQLException{
         stmt = c.createStatement();
         return stmt.executeQuery(query);
+    }
+    
+    public void insertQuery(String query) throws SQLException{
+        stmt = c.createStatement();
+        stmt.executeUpdate(query);
     }
 }
