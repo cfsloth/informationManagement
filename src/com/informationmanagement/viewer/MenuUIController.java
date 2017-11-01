@@ -53,7 +53,7 @@ public class MenuUIController implements Initializable {
         } 
     }
     
-     @FXML
+    @FXML
     private void goToUserPage(ActionEvent event) throws IOException{
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle("Go to User Page");
