@@ -16,8 +16,8 @@ import java.sql.Statement;
  * @author CláudioFilipedaSilva
  */
 public class DatabaseConection {
-    Connection c;
-    Statement stmt;
+    private Connection c;
+    private Statement stmt;
         
     public DatabaseConection() throws ClassNotFoundException, SQLException{
         Class.forName("org.postgresql.Driver");

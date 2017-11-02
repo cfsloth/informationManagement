@@ -16,6 +16,8 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 /**
@@ -26,6 +28,10 @@ public class LoginUIController implements Initializable {
     
     @FXML
     private Label label;
+    @FXML
+    private TextField username;
+    @FXML
+    private PasswordField password;
     
     @FXML
     private void handleButtonAction(ActionEvent event) {
@@ -36,11 +42,10 @@ public class LoginUIController implements Initializable {
     @FXML
     private void loginUI(ActionEvent event) throws IOException{
         //Changing scenes
+        //System.out.println(username.getText());
         System.out.println("Changing to MenuUI");
         Node source = (Node) event.getSource();
-        
         Stage stage = (Stage) source.getScene().getWindow();
-        
         Parent menu = FXMLLoader.load(getClass().getResource("MenuUI.fxml"));
         Scene scene = new Scene(menu);
         stage.setScene(scene);
