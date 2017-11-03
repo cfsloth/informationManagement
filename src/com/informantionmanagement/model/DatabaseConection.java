@@ -22,7 +22,7 @@ public class DatabaseConection {
     public DatabaseConection() throws ClassNotFoundException, SQLException{
         Class.forName("org.postgresql.Driver");
         c = DriverManager
-            .getConnection("jdbc:postgresql://localhost:5432/InformationManagement",
+            .getConnection("jdbc:postgresql://localhost:5432/informationManagement",
             "postgres", "claudiofilipe21");
     }
     
