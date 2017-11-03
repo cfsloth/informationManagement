@@ -51,6 +51,11 @@ public class LoginUIController implements Initializable {
         stage.setScene(scene);
     }
     
+    @FXML
+    private void recoverPassword(){
+        
+    }
+    
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
