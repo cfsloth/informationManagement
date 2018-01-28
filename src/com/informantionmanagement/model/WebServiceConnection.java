@@ -5,6 +5,7 @@
  */
 package com.informantionmanagement.model;
 
+import com.google.gson.Gson;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
@@ -14,7 +15,7 @@ import java.net.URL;
  *
  * @author Claudio
  */
-public class WebServiceConnection {
+public abstract class WebServiceConnection {
     
     public String getRequest(String urlToRead) throws Exception {
       StringBuilder result = new StringBuilder();
@@ -26,6 +27,7 @@ public class WebServiceConnection {
       while ((line = rd.readLine()) != null) {
          result.append(line);
       }
+      //Gson a = new Gson().fromJson(line,User.class);
       rd.close();
       return result.toString();
    }

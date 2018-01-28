@@ -15,8 +15,9 @@ import junit.framework.TestCase;
 public class Tests extends TestCase {
     
     public static void main(String[] args) throws Exception{
-        WebServiceConnection a = new WebServiceConnection();
-        String b = a.getRequest("http://www.google.com");
+        WebServiceConnection a = new WebServiceConnection() {};
+        String b = a.getRequest("http://192.168.1.2:8081/WebServiceIM/"
+                + "user.php?email=claudiofilipesilvagoncalves@gmail.com");
         System.out.println(b);
     }
     

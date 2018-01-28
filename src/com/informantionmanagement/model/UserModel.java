@@ -11,7 +11,7 @@ import java.sql.SQLException;
  *
  * @author ASUS
  */
-public class UserModel {
+public class UserModel extends WebServiceConnection{
     private String username;
     private String password;
     private String firstName;
@@ -22,6 +22,10 @@ public class UserModel {
         this.password = password;
         this.firstName = firstName;
         this.lastName = lastName;
+    }
+    
+    public int verifyUser(String email, String password){
+        return 1;
     }
 
     public String getUsername() {
