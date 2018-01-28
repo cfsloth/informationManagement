@@ -27,11 +27,6 @@ public class UserModel {
     public String getUsername() {
         return username;
     }
-
-    public boolean verifyUser() throws ClassNotFoundException, SQLException{
-        DatabaseConection db = new DatabaseConection();
-        return false;
-    }
     
     public void setUsername(String username) {
         this.username = username;

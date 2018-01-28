@@ -5,6 +5,7 @@
  */
 package com.informationmanagement.tests;
 
+import com.informantionmanagement.model.WebServiceConnection;
 import junit.framework.TestCase;
 
 /**
@@ -13,8 +14,10 @@ import junit.framework.TestCase;
  */
 public class Tests extends TestCase {
     
-    public static void main(String[] args){
-        assertEquals(0,1);
+    public static void main(String[] args) throws Exception{
+        WebServiceConnection a = new WebServiceConnection();
+        String b = a.getRequest("http://www.google.com");
+        System.out.println(b);
     }
     
 }
