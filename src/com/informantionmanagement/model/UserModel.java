@@ -5,37 +5,70 @@
  */
 package com.informantionmanagement.model;
 
-import java.sql.SQLException;
+import com.google.gson.Gson;
 
 /**
  *
- * @author ASUS
+ * @author Claudio
  */
 public class UserModel extends WebServiceConnection{
-    private String username;
+    private String email;
     private String password;
     private String firstName;
     private String lastName;
+    private String userTypes_id_type;
+    private String URI = "http://192.168.31.105:8081/WebServiceIM/user.php?email="; 
     
-    public UserModel(String username, String password, String firstName, String lastName){
-        this.username = username;
+    public UserModel(String email, String password, String firstName, String lastName){
+        this.email = email;
         this.password = password;
         this.firstName = firstName;
         this.lastName = lastName;
+        this.userTypes_id_type = "";
     }
     
-    public int verifyUser(String email, String password){
-        return 1;
-    }
-
-    public String getUsername() {
-        return username;
+    
+    public UserModel() {
+        
     }
     
-    public void setUsername(String username) {
-        this.username = username;
+    public int verifyUser(String email, String password) throws Exception{
+        String result  = super.getRequest(URI + email);
+        Gson a = new Gson();
+        //System.out.println(result);
+        UserModel jsonUser = a.fromJson(result, UserModel.class);
+        //System.out.println(jsonUser.getFirstName());
+        if(password.equals(jsonUser.password)){
+            return 1;
+        }
+        return 0;
     }
 
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getUserTypes_id_type() {
+        return userTypes_id_type;
+    }
+
+    public void setUserTypes_id_type(String userTypes_id_type) {
+        this.userTypes_id_type = userTypes_id_type;
+    }
+
+    public String getURI() {
+        return URI;
+    }
+
+    public void setURI(String URI) {
+        this.URI = URI;
+    }
+    
+    
     public String getPassword() {
         return password;
     }

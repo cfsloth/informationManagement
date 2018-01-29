@@ -5,6 +5,7 @@
  */
 package com.informationmanagement.viewer;
 
+import com.informantionmanagement.model.UserModel;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -15,6 +16,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
@@ -25,7 +28,7 @@ import javafx.stage.Stage;
  * @author claudio
  */
 public class LoginUIController implements Initializable {
-    
+    private UserModel userModel = new UserModel();
     @FXML
     private Label label;
     @FXML
@@ -42,13 +45,26 @@ public class LoginUIController implements Initializable {
     @FXML
     private void loginUI(ActionEvent event) throws IOException{
         //Changing scenes
-        //System.out.println(username.getText());
-        System.out.println("Changing to MenuUI");
-        Node source = (Node) event.getSource();
-        Stage stage = (Stage) source.getScene().getWindow();
-        Parent menu = FXMLLoader.load(getClass().getResource("MenuUI.fxml"));
-        Scene scene = new Scene(menu);
-        stage.setScene(scene);
+        try{
+            int returnValue = userModel.verifyUser(username.getText()+"", password.getText()+"");
+            if(returnValue == 1){
+                System.out.println("Changing to MenuUI");
+                Node source = (Node) event.getSource();
+                Stage stage = (Stage) source.getScene().getWindow();
+                Parent menu = FXMLLoader.load(getClass().getResource("MenuUI.fxml"));
+                Scene scene = new Scene(menu);
+                stage.setScene(scene);
+            }else{
+                Alert alert = new Alert(AlertType.ERROR);
+                alert.setTitle("Wrong Login");
+                alert.setHeaderText("Wrong Login");
+                alert.setContentText("You insert your email and/or password wrong!");
+                alert.showAndWait();
+            }
+            
+        }catch(Exception e){
+            System.out.println(e);
+        }
     }
     
     @FXML
