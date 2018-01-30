@@ -42,8 +42,11 @@ public class LoginUIController implements Initializable {
         label.setText("Hello World!");
     }
     
+    /*
+    *Method to do the login
+    */
     @FXML
-    private void loginUI(ActionEvent event) throws IOException{
+    private void loginUI(ActionEvent event){
         //Changing scenes
         try{
             int returnValue = userModel.verifyUser(username.getText()+"", password.getText()+"");
@@ -61,9 +64,12 @@ public class LoginUIController implements Initializable {
                 alert.setContentText("You insert your email and/or password wrong!");
                 alert.showAndWait();
             }
-            
         }catch(Exception e){
-            System.out.println(e);
+            Alert alert = new Alert(AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setHeaderText("Error");
+            alert.setContentText(e.toString());
+            alert.showAndWait();;
         }
     }
     

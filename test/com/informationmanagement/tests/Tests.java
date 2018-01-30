@@ -5,7 +5,7 @@
  */
 package com.informationmanagement.tests;
 
-import com.informantionmanagement.model.WebServiceConnection;
+import com.informantionmanagement.model.UserModel;
 import junit.framework.TestCase;
 
 /**
@@ -15,10 +15,12 @@ import junit.framework.TestCase;
 public class Tests extends TestCase {
     
     public static void main(String[] args) throws Exception{
-        WebServiceConnection a = new WebServiceConnection() {};
+        /*WebServiceConnection a = new WebServiceConnection() {};
         String b = a.getRequest("http://192.168.1.2:8081/WebServiceIM/"
                 + "user.php?email=claudiofilipesilvagoncalves@gmail.com");
         System.out.println(b);
+        */
+        UserModel a = new UserModel();
+        a.verifyUser("claudiofilipesilvagoncalves@gmail.com1", "");
     }
-    
 }
