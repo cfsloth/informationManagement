@@ -5,6 +5,7 @@
  */
 package com.informationmanagement.viewer;
 
+import com.informantionmanagement.model.UserModel;
 import java.io.IOException;
 import java.net.URL;
 import java.util.Optional;
@@ -26,13 +27,29 @@ import javafx.stage.Stage;
  * @author claudio
  */
 public class MenuUIController implements Initializable {
+    private UserModel model;
+    
+    
+    public MenuUIController(UserModel model){
+        this.model = model;
+    }
 
+    public UserModel getModel() {
+        return model;
+    }
+
+    public void setModel(UserModel model) {
+        this.model = model;
+    }
+    
+    
+    
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        
+        System.out.println(this.model.getFirstName());
     }
 
      @FXML
@@ -61,6 +78,7 @@ public class MenuUIController implements Initializable {
         alert.setContentText("Se sair do sistema, dados que não tenham sido \nguardados serão perdidos.");
         Optional<ButtonType> result = alert.showAndWait();
         if (result.get() == ButtonType.OK){
+            System.out.println(model.getFirstName());
             // ... user chose OK
             System.out.println("Changing to UserUI");
             Node source = (Node) event.getSource();

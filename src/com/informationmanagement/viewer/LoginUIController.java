@@ -6,7 +6,6 @@
 package com.informationmanagement.viewer;
 
 import com.informantionmanagement.model.UserModel;
-import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -22,6 +21,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+
 
 /**
  *
@@ -51,10 +51,15 @@ public class LoginUIController implements Initializable {
         try{
             int returnValue = userModel.verifyUser(username.getText()+"", password.getText()+"");
             if(returnValue == 1){
+                userModel.setFirstName(username.getText());
                 System.out.println("Changing to MenuUI");
                 Node source = (Node) event.getSource();
                 Stage stage = (Stage) source.getScene().getWindow();
-                Parent menu = FXMLLoader.load(getClass().getResource("MenuUI.fxml"));
+                URL url = getClass().getResource("MenuUI.fxml");
+                MenuUIController menuA = (MenuUIController) url.getContent();
+                menuA.setModel(userModel);
+                Parent menu = FXMLLoader.load(url);
+                
                 Scene scene = new Scene(menu);
                 stage.setScene(scene);
             }else{

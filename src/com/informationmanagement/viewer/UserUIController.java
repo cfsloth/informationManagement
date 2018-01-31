@@ -18,6 +18,8 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 /**
@@ -27,6 +29,15 @@ import javafx.stage.Stage;
  */
 public class UserUIController implements Initializable {
 
+    @FXML
+    private TextField userEmail;
+    @FXML
+    private PasswordField userName;
+    @FXML
+    private TextField userDepartment;
+    @FXML 
+    private TextField userPosition;
+    
     @FXML
     private void logOut(ActionEvent event) throws IOException{
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
@@ -68,7 +79,7 @@ public class UserUIController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        
     }    
     
 }

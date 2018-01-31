@@ -15,12 +15,12 @@ import junit.framework.TestCase;
 public class Tests extends TestCase {
     
     public static void main(String[] args) throws Exception{
-        /*WebServiceConnection a = new WebServiceConnection() {};
-        String b = a.getRequest("http://192.168.1.2:8081/WebServiceIM/"
-                + "user.php?email=claudiofilipesilvagoncalves@gmail.com");
-        System.out.println(b);
-        */
+        //WebServiceConnection a = new WebServiceConnection() {};
+        //String b = a.getRequest("http://192.168.1.143:8081/WebServiceIM/"
+          //      + "user.php?email=claudio2filipesilvagoncalves@gmail.com");
+        //System.out.println(b);
         UserModel a = new UserModel();
-        a.verifyUser("claudiofilipesilvagoncalves@gmail.com1", "");
+        UserModel b = a.getUser("asdfasfa");
+        System.out.println(b.getFirstName());
     }
 }
