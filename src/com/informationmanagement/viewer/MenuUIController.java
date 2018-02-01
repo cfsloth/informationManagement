@@ -29,9 +29,12 @@ import javafx.stage.Stage;
 public class MenuUIController implements Initializable {
     private UserModel model;
     
-    
-    public MenuUIController(UserModel model){
-        this.model = model;
+    /**
+     * Initializes the controller class.
+     */
+    @Override
+    public void initialize(URL url, ResourceBundle rb) {
+        
     }
 
     public UserModel getModel() {
@@ -43,14 +46,6 @@ public class MenuUIController implements Initializable {
     }
     
     
-    
-    /**
-     * Initializes the controller class.
-     */
-    @Override
-    public void initialize(URL url, ResourceBundle rb) {
-        System.out.println(this.model.getFirstName());
-    }
 
      @FXML
     private void logOut(ActionEvent event) throws IOException{
@@ -78,11 +73,13 @@ public class MenuUIController implements Initializable {
         alert.setContentText("Se sair do sistema, dados que não tenham sido \nguardados serão perdidos.");
         Optional<ButtonType> result = alert.showAndWait();
         if (result.get() == ButtonType.OK){
-            System.out.println(model.getFirstName());
+            System.out.println();
             // ... user chose OK
             System.out.println("Changing to UserUI");
             Node source = (Node) event.getSource();
             Stage stage = (Stage) source.getScene().getWindow();
+            UserModel a = (UserModel) stage.getUserData();
+            System.out.println("First Name: " + a.getFirstName());
             Parent menu = FXMLLoader.load(getClass().getResource("UserUI.fxml"));
             Scene scene = new Scene(menu);
             stage.setScene(scene);
