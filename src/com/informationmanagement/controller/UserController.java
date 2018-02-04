@@ -5,6 +5,7 @@
  */
 package com.informationmanagement.controller;
 
+import com.google.gson.Gson;
 import com.informantionmanagement.model.UserModel;
 import com.informationmanagement.viewer.LoginUIController;
 
@@ -21,12 +22,15 @@ public class UserController {
         this.loginUI= loginUI;
     }
     
-    //Incomplete
-    public boolean verifyLogin(){
-        return false;
-        
+    //Complete
+     public int verifyUser(String email, String password) throws Exception{
+        UserModel model = new UserModel();
+        if(password.equals(model.getUser(email).getPassword())){
+            return 1;
+        }
+        return 0;
     }
-
+     
     public UserModel getUser() {
         return user;
     }

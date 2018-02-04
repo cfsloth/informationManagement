@@ -17,7 +17,7 @@ public class UserModel extends WebServiceConnection{
     private String firstName;
     private String lastName;
     private String userTypes_id_type;
-    private String URI = "http://172.26.34.165:8081/WebServiceIM/user.php?email="; 
+    private String URI = "http://192.168.1.5:8081/WebServiceIM/user.php?email="; 
     
     public UserModel(String email, String password, String firstName, String lastName){
         this.email = email;
@@ -30,18 +30,6 @@ public class UserModel extends WebServiceConnection{
     
     public UserModel() {
         
-    }
-    
-    public int verifyUser(String email, String password) throws Exception{
-        String result  = super.getRequest(URI + email);
-        Gson a = new Gson();
-        //System.out.println(result);
-        UserModel jsonUser = a.fromJson(result, UserModel.class);
-        //System.out.println(jsonUser.getFirstName());
-        if(password.equals(jsonUser.password)){
-            return 1;
-        }
-        return 0;
     }
     
     public UserModel getUser(String email) throws Exception {

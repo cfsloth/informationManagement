@@ -6,6 +6,7 @@
 package com.informationmanagement.viewer;
 
 import com.informantionmanagement.model.UserModel;
+import com.informationmanagement.controller.UserController;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -28,7 +29,7 @@ import javafx.stage.Stage;
  * @author claudio
  */
 public class LoginUIController implements Initializable {
-    private UserModel userModel = new UserModel();
+    private UserController userController;
     @FXML
     private Label label;
     @FXML
@@ -49,19 +50,18 @@ public class LoginUIController implements Initializable {
     private void loginUI(ActionEvent event){
         //Changing scenes
         try{
-            int returnValue = userModel.verifyUser(username.getText()+"", password.getText()+"");
+            UserModel model = new UserModel();
+            this.userController = new UserController(model,this);
+            int returnValue = userController.verifyUser(username.getText()+"", password.getText()+"");
             if(returnValue == 1){
-                userModel.setFirstName("claudio");
+                //userModel.setFirstName("claudio");
                 System.out.println("Changing to MenuUI");
                 Node source = (Node) event.getSource();
                 Stage stage = (Stage) source.getScene().getWindow();
-                /*URL url = getClass().getResource("MenuUI.fxml");
-                Parent menu = FXMLLoader.load(url);
-                menu.setUserData(menu); */
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("MenuUI.fxml"));
                 Parent menu = loader.load();
                 MenuUIController controller = loader.<MenuUIController>getController();
-                controller.setModel(userModel);
+                //controller.setModel(userModel);
                 loader.setController(controller);
                 Scene scene = new Scene(menu);
                 stage.setScene(scene);
