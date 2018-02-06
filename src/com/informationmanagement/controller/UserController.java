@@ -23,7 +23,7 @@ public class UserController {
     }
     
     //Complete
-     public int verifyUser(String email, String password) throws Exception{
+    public int verifyUser(String email, String password) throws Exception{
         UserModel model = new UserModel();
         if(password.equals(model.getUser(email).getPassword())){
             return 1;

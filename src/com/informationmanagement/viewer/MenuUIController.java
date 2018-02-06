@@ -19,6 +19,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
+import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
 /**
@@ -28,13 +29,14 @@ import javafx.stage.Stage;
  */
 public class MenuUIController implements Initializable {
     private UserModel model;
-    
+    @FXML
+    private Label userName;
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        
+        System.out.println(model.getFirstName());
     }
 
     public UserModel getModel() {
@@ -45,10 +47,9 @@ public class MenuUIController implements Initializable {
         this.model = model;
     }
     
-    
-
-     @FXML
+    @FXML
     private void logOut(ActionEvent event) throws IOException{
+        System.out.println(this.model.getFirstName());
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle("Sign Out");
         alert.setHeaderText("Deseja mesmo sair do sistema?");
@@ -95,5 +96,12 @@ public class MenuUIController implements Initializable {
         Scene scene = new Scene(menu);
         stage.setScene(scene);
     }
-    
+
+    public Label getUserName() {
+        return userName;
+    }
+
+    public void setUserName(Label userName) {
+        this.userName = userName;
+    }
 }

@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.shape.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="604.0" prefWidth="640.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="com.informationmanagement.viewer.MenuUIController">
+<AnchorPane id="AnchorPane" prefHeight="604.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.informationmanagement.viewer.MenuUIController">
   <children>
     <Pane layoutX="0.0" layoutY="0.0" prefHeight="604.0" prefWidth="640.0">
       <children>
@@ -22,7 +22,7 @@
           </image>
         </ImageView>
         <Rectangle arcHeight="5.0" arcWidth="5.0" fill="BLACK" height="21.000099182128906" layoutX="0.0" layoutY="-1.0" opacity="0.7" stroke="BLACK" strokeType="INSIDE" width="640.0" />
-        <Label layoutX="7.0" layoutY="-1.0" minHeight="13.999908447265625" prefHeight="21.0" prefWidth="335.0" text="Utilizador:" textFill="WHITE" />
+        <Label fx:id="userType" layoutX="7.0" layoutY="-1.0" minHeight="13.999908447265625" prefHeight="21.0" prefWidth="335.0" text="Utilizador:" textFill="WHITE" />
         <Label layoutX="342.0" layoutY="-1.0" prefHeight="21.000099182128906" prefWidth="227.0" text="Tipo de Utilizador : Administrador" textFill="WHITE" />
         <Button layoutX="618.0" layoutY="-1.0" maxHeight="22.0" maxWidth="22.0" minHeight="22.0" minWidth="22.0" mnemonicParsing="false" onAction="#logOut" prefHeight="22.0" prefWidth="22.0" style="-fx-border-color: transparent;&#10;    -fx-border-width: 0;&#10;    -fx-background-radius: 0;&#10;    -fx-background-color: transparent;&#10;    -fx-font-family:&quot;Segoe UI&quot;, Helvetica, Arial, sans-serif;&#10;    -fx-font-size: 1em; /* 12 */&#10;    -fx-text-fill: #828282;" text="">
           <graphic>

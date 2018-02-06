@@ -54,15 +54,18 @@ public class LoginUIController implements Initializable {
             this.userController = new UserController(model,this);
             int returnValue = userController.verifyUser(username.getText()+"", password.getText()+"");
             if(returnValue == 1){
-                //userModel.setFirstName("claudio");
                 System.out.println("Changing to MenuUI");
+                //Getting node
                 Node source = (Node) event.getSource();
                 Stage stage = (Stage) source.getScene().getWindow();
+                //New Loader to New Scene
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("MenuUI.fxml"));
                 Parent menu = loader.load();
-                MenuUIController controller = loader.<MenuUIController>getController();
-                //controller.setModel(userModel);
-                loader.setController(controller);
+                MenuUIController controller = new MenuUIController();
+                UserModel userInfo = model.getUser(username.getText());
+                controller.setModel(userInfo);
+                //loader.setController(controller);
+                //Adding Loader to the Scene
                 Scene scene = new Scene(menu);
                 stage.setScene(scene);
             }else{

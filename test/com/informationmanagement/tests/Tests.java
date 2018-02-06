@@ -5,7 +5,7 @@
  */
 package com.informationmanagement.tests;
 
-import com.informantionmanagement.model.UserModel;
+import com.informationmanagement.model.UserModel;
 import junit.framework.TestCase;
 
 /**
