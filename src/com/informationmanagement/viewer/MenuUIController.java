@@ -5,7 +5,7 @@
  */
 package com.informationmanagement.viewer;
 
-import com.informantionmanagement.model.UserModel;
+import com.informationmanagement.model.UserModel;
 import java.io.IOException;
 import java.net.URL;
 import java.util.Optional;

@@ -5,7 +5,7 @@
  */
 package com.informationmanagement.viewer;
 
-import com.informantionmanagement.model.UserModel;
+import com.informationmanagement.model.UserModel;
 import com.informationmanagement.controller.UserController;
 import java.net.URL;
 import java.util.ResourceBundle;

@@ -6,7 +6,7 @@
 package com.informationmanagement.controller;
 
 import com.google.gson.Gson;
-import com.informantionmanagement.model.UserModel;
+import com.informationmanagement.model.UserModel;
 import com.informationmanagement.viewer.LoginUIController;
 
 /**

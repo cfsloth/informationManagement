@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<fx:root id="AnchorPane" prefHeight="604.0" prefWidth="640.0" type="AnchorPane" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Pane prefHeight="604.0" prefWidth="640.0">
+         <children>
+            <ImageView fitHeight="604.0" fitWidth="640.0" opacity="0.94" pickOnBounds="true">
+               <image>
+                  <Image url="@../images/7337370010_b7f437f3c1_b.jpg" />
+               </image>
+               <effect>
+                  <GaussianBlur />
+               </effect>
+            </ImageView>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="BLACK" height="21.0" opacity="0.7" stroke="BLACK" strokeType="INSIDE" width="640.0" />
+            <Button layoutX="568.0" layoutY="1.0" minHeight="21.0" minWidth="22.0" mnemonicParsing="false" onAction="#goHome" prefHeight="21.0" prefWidth="22.0" style="-fx-border-color: transparent;&#10;    -fx-border-width: 0;&#10;    -fx-background-radius: 0;&#10;    -fx-background-color: transparent;&#10;    -fx-font-family:&quot;Segoe UI&quot;, Helvetica, Arial, sans-serif;&#10;    -fx-font-size: 1em; /* 12 */&#10;    -fx-text-fill: #828282;" text="">
+               <graphic>
+                  <ImageView fitHeight="21.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/home-icon.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button layoutX="594.0" maxHeight="22.0" maxWidth="22.0" minHeight="22.0" minWidth="22.0" mnemonicParsing="false" onAction="#goToUserPage" prefHeight="22.0" prefWidth="22.0" style="-fx-border-color: transparent;&#10;    -fx-border-width: 0;&#10;    -fx-background-radius: 0;&#10;    -fx-background-color: transparent;&#10;    -fx-font-family:&quot;Segoe UI&quot;, Helvetica, Arial, sans-serif;&#10;    -fx-font-size: 1em; /* 12 */&#10;    -fx-text-fill: #828282;" text="">
+               <graphic>
+                  <ImageView fitHeight="22.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/profile.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Label layoutX="340.0" prefHeight="21.000099182128906" prefWidth="227.0" text="Tipo de Utilizador :" textFill="WHITE" />
+            <Label layoutX="10.0" minHeight="13.999908447265625" prefHeight="21.0" prefWidth="335.0" text="Utilizador :" textFill="WHITE" />
+            <Button layoutX="618.0" layoutY="1.0" maxHeight="22.0" maxWidth="22.0" minHeight="20.999999182131432" minWidth="21.9998779296875" mnemonicParsing="false" onAction="#logOut" prefHeight="20.999999182131432" prefWidth="21.9998779296875" style="-fx-border-color: transparent;&#10;    -fx-border-width: 0;&#10;    -fx-background-radius: 0;&#10;    -fx-background-color: transparent;&#10;    -fx-font-family:&quot;Segoe UI&quot;, Helvetica, Arial, sans-serif;&#10;    -fx-font-size: 1em; /* 12 */&#10;    -fx-text-fill: #828282;" text="">
+               <graphic>
+                  <ImageView fitHeight="22.0" fitWidth="22.0" onDragDetected="#logOut" onTouchPressed="#logOut" onTouchReleased="#logOut" pickOnBounds="true" preserveRatio="true" style="">
+                     <image>
+                        <Image url="@../images/close_red.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Pane layoutX="14.0" layoutY="44.0" opacity="0.8" prefHeight="272.0" prefWidth="320.0" style="-fx-background-color: #313330;">
+               <children>
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="BLACK" height="21.0" layoutY="-1.0" opacity="0.7" stroke="BLACK" strokeType="INSIDE" width="320.0" />
+                  <Label layoutX="8.0" layoutY="-1.0" minHeight="13.999908447265625" prefHeight="21.0" prefWidth="312.0" text="Selecionar Utilizador" textFill="WHITE" />
+               </children>
+            </Pane>
+            <Pane layoutX="16.0" layoutY="335.0" opacity="0.8" prefHeight="209.0" prefWidth="612.0" style="-fx-background-color: #313330;">
+               <children>
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="BLACK" height="21.0" opacity="0.7" stroke="BLACK" strokeType="INSIDE" width="612.0" />
+                  <TextField layoutX="14.0" layoutY="35.0" prefHeight="25.0" prefWidth="262.0" promptText="First Name" />
+                  <TextField layoutX="14.0" layoutY="78.0" prefHeight="25.0" prefWidth="262.0" promptText="Last Name" />
+                  <TextField layoutX="14.0" layoutY="117.0" prefHeight="25.0" prefWidth="262.0" promptText="Department" />
+                  <PasswordField layoutX="14.0" layoutY="159.0" prefHeight="25.0" prefWidth="262.0" promptText="Password" />
+                  <TextField layoutX="306.0" layoutY="35.0" prefHeight="25.0" prefWidth="298.0" promptText="Email" />
+                  <Label minHeight="13.999908447265625" prefHeight="21.0" prefWidth="612.0" text="Criar Utilizador" textFill="WHITE" />
+                  <CheckBox layoutX="306.0" layoutY="82.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="298.0" text="Administrator" textFill="#ebe8e8" />
+                  <Button layoutX="531.0" layoutY="159.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="73.0" text="Create " />
+               </children>
+            </Pane>
+            <Pane layoutX="343.0" layoutY="43.0" opacity="0.8" prefHeight="272.0" prefWidth="284.0" style="-fx-background-color: #313330;">
+               <children>
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="BLACK" height="21.0" opacity="0.7" stroke="BLACK" strokeType="INSIDE" width="284.0" />
+                  <Label layoutX="7.0" minHeight="13.999908447265625" prefHeight="21.0" prefWidth="277.0" text="Visualizar Utilizador" textFill="WHITE" />
+                  <TextField editable="false" layoutX="11.0" layoutY="36.0" prefHeight="25.0" prefWidth="262.0" promptText="First Name" />
+                  <TextField editable="false" layoutX="11.0" layoutY="77.0" prefHeight="25.0" prefWidth="262.0" promptText="Last Name" />
+                  <TextField editable="false" layoutX="11.0" layoutY="117.0" prefHeight="25.0" prefWidth="262.0" promptText="Department" />
+                  <TextField editable="false" layoutX="11.0" layoutY="159.0" prefHeight="25.0" prefWidth="262.0" promptText="Email" />
+                  <CheckBox disable="true" layoutX="11.0" layoutY="197.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="262.0" text="Administrator" textFill="#ebe8e8" />
+                  <Button layoutX="197.0" layoutY="233.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="73.0" text="Edit" />
+               </children>
+            </Pane>
+            <Separator layoutX="337.0" layoutY="36.0" orientation="VERTICAL" prefHeight="294.0" prefWidth="6.0" />
+         </children>
+      </Pane>
+   </children>
+</fx:root>
