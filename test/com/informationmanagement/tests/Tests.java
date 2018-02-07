@@ -5,7 +5,7 @@
  */
 package com.informationmanagement.tests;
 
-import com.informationmanagement.model.UserModel;
+import com.informationmanagement.model.WebServiceConnection;
 import junit.framework.TestCase;
 
 /**
@@ -19,8 +19,7 @@ public class Tests extends TestCase {
         //String b = a.getRequest("http://192.168.1.143:8081/WebServiceIM/"
           //      + "user.php?email=claudio2filipesilvagoncalves@gmail.com");
         //System.out.println(b);
-        UserModel a = new UserModel();
-        UserModel b = a.getUser("asdfasfa");
-        System.out.println(b.getFirstName());
+        WebServiceConnection a = new WebServiceConnection() {};
+        a.putRequest("http://192.168.1.3:8081/WebServiceIM/user.php");
     }
 }

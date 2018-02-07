@@ -17,14 +17,18 @@ public class UserModel extends WebServiceConnection{
     private String firstName;
     private String lastName;
     private String userTypes_id_type;
+    private String department;
+    private String position;
     private String URI = "http://192.168.1.3:8081/WebServiceIM/user.php?email="; 
     
-    public UserModel(String email, String password, String firstName, String lastName){
+    public UserModel(String email, String password, String firstName, String lastName,String department,String position){
         this.email = email;
         this.password = password;
         this.firstName = firstName;
         this.lastName = lastName;
         this.userTypes_id_type = "";
+        this.department = department;
+        this.position = position;
     }
     
     
@@ -89,5 +93,21 @@ public class UserModel extends WebServiceConnection{
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
+    }
+
+    public String getDepartment() {
+        return department;
+    }
+
+    public void setDepartment(String department) {
+        this.department = department;
+    }
+
+    public String getPosition() {
+        return position;
+    }
+
+    public void setPosition(String position) {
+        this.position = position;
     }
 }

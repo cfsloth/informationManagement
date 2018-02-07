@@ -48,9 +48,9 @@ public class UserUIController implements Initializable {
         this.userCompleteName.setText(userCompleteName.getText() + " " 
                 + model.getFirstName() + " " + model.getLastName());
         this.userType.setText(model.getUserTypes_id_type());
-        this.userDepartment.setText("Department");
+        this.userDepartment.setText(this.model.getDepartment());
         this.userName.setText(this.model.getFirstName());
-        this.userPosition.setText("Position");
+        this.userPosition.setText(this.model.getPosition());
         this.userEmail.setText(model.getEmail());
     }
     

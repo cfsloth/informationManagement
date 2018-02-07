@@ -5,7 +5,6 @@
  */
 package com.informationmanagement.controller;
 
-import com.google.gson.Gson;
 import com.informationmanagement.model.UserModel;
 import com.informationmanagement.viewer.LoginUIController;
 
@@ -29,6 +28,15 @@ public class UserController {
             return 1;
         }
         return 0;
+    }
+    
+    public void changePassword(String email, String oldPassword
+            ,String newPassword, String newPassword2) throws Exception{
+        if(newPassword.equals(newPassword2) && 
+                oldPassword.equals(this.user.getUser(email).getPassword())){
+                //change password -> put method
+        }
+        throw new Exception("Error: Make sure your new passwords are equal and/or you inserted your old password right");
     }
      
     public UserModel getUser() {
