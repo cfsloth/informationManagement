@@ -61,10 +61,8 @@ public class LoginUIController implements Initializable {
                 //New Loader to New Scene
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("MenuUI.fxml"));
                 Parent menu = loader.load();
-                MenuUIController controller = new MenuUIController();
-                UserModel userInfo = model.getUser(username.getText());
-                controller.setModel(userInfo);
-                //loader.setController(controller);
+                MenuUIController controller = loader.<MenuUIController>getController();
+                controller.initData(new UserModel().getUser(username.getText()));
                 //Adding Loader to the Scene
                 Scene scene = new Scene(menu);
                 stage.setScene(scene);

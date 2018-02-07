@@ -22,8 +22,8 @@
           </image>
         </ImageView>
         <Rectangle arcHeight="5.0" arcWidth="5.0" fill="BLACK" height="21.000099182128906" layoutX="0.0" layoutY="-1.0" opacity="0.7" stroke="BLACK" strokeType="INSIDE" width="640.0" />
-        <Label fx:id="userType" layoutX="7.0" layoutY="-1.0" minHeight="13.999908447265625" prefHeight="21.0" prefWidth="335.0" text="Utilizador:" textFill="WHITE" />
-        <Label layoutX="342.0" layoutY="-1.0" prefHeight="21.000099182128906" prefWidth="227.0" text="Tipo de Utilizador : Administrador" textFill="WHITE" />
+        <Label fx:id="userName" layoutX="7.0" layoutY="-1.0" minHeight="13.999908447265625" prefHeight="21.0" prefWidth="335.0" text="Utilizador:" textFill="WHITE" />
+        <Label fx:id="userType" layoutX="342.0" layoutY="-1.0" prefHeight="21.000099182128906" prefWidth="227.0" text="Tipo de Utilizador :" textFill="WHITE" />
         <Button layoutX="618.0" layoutY="-1.0" maxHeight="22.0" maxWidth="22.0" minHeight="22.0" minWidth="22.0" mnemonicParsing="false" onAction="#logOut" prefHeight="22.0" prefWidth="22.0" style="-fx-border-color: transparent;&#10;    -fx-border-width: 0;&#10;    -fx-background-radius: 0;&#10;    -fx-background-color: transparent;&#10;    -fx-font-family:&quot;Segoe UI&quot;, Helvetica, Arial, sans-serif;&#10;    -fx-font-size: 1em; /* 12 */&#10;    -fx-text-fill: #828282;" text="">
           <graphic>
             <ImageView disable="true" fitHeight="21.000099999997474" fitWidth="21.000099999997474" focusTraversable="true" pickOnBounds="true" preserveRatio="false" smooth="true">
@@ -47,7 +47,7 @@
     <Pane layoutX="179.0" layoutY="40.0" opacity="0.75" prefHeight="536.0" prefWidth="282.0" style="-fx-background-color: #313330;">
       <children>
         <Rectangle arcHeight="5.0" arcWidth="5.0" fill="BLACK" height="13.999899864196777" layoutX="0.0" layoutY="0.0" opacity="1.0" smooth="true" stroke="BLACK" strokeType="INSIDE" strokeWidth="1.0" width="282.0" />
-        <Button layoutX="14.0" layoutY="465.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="254.0" style="-fx-background-color : #78c7c7 ;" text="    User's Page" textFill="WHITE">
+        <Button layoutX="14.0" layoutY="465.0" mnemonicParsing="false" onAction="#goToUserPageWithoutWarning" prefHeight="57.0" prefWidth="254.0" style="-fx-background-color : #78c7c7 ;" text="    User's Page" textFill="WHITE">
           <graphic>
             <ImageView fitHeight="49.0" fitWidth="49.0" pickOnBounds="true" preserveRatio="true" style=" " x="0.0">
               <image>

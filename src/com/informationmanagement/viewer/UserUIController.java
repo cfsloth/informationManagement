@@ -5,6 +5,7 @@
  */
 package com.informationmanagement.viewer;
 
+import com.informationmanagement.model.UserModel;
 import java.io.IOException;
 import java.net.URL;
 import java.util.Optional;
@@ -18,7 +19,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
-import javafx.scene.control.PasswordField;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
@@ -28,15 +29,31 @@ import javafx.stage.Stage;
  * @author claudio
  */
 public class UserUIController implements Initializable {
-
+    private UserModel model;
+    @FXML
+    private Label userCompleteName;
+    @FXML
+    private Label userType;
     @FXML
     private TextField userEmail;
     @FXML
-    private PasswordField userName;
+    private TextField userName;
     @FXML
     private TextField userDepartment;
     @FXML 
     private TextField userPosition;
+    
+    public void initData(UserModel model){
+        this.model = model;
+        this.userCompleteName.setText(userCompleteName.getText() + " " 
+                + model.getFirstName() + " " + model.getLastName());
+        this.userType.setText(model.getUserTypes_id_type());
+        this.userDepartment.setText("Department");
+        this.userName.setText(this.model.getFirstName());
+        this.userPosition.setText("Position");
+        this.userEmail.setText(model.getEmail());
+    }
+    
     
     @FXML
     private void logOut(ActionEvent event) throws IOException{
