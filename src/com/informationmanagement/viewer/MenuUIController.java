@@ -118,7 +118,10 @@ public class MenuUIController implements Initializable {
         System.out.println("Changing to WarningUI");
         Node source = (Node) event.getSource();
         Stage stage = (Stage) source.getScene().getWindow();
-        Parent menu = FXMLLoader.load(getClass().getResource("WarningUI.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("WarningUI.fxml"));
+        Parent menu = loader.load();
+        WarningUIController controller = loader.<WarningUIController>getController();
+        controller.initController();
         Scene scene = new Scene(menu);
         stage.setScene(scene);
     }

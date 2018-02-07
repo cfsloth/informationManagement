@@ -11,7 +11,7 @@
 <?import javafx.scene.paint.*?>
 <?import javafx.scene.shape.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="604.0" prefWidth="640.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="com.informationmanagement.viewer.WarningUIController">
+<AnchorPane id="AnchorPane" prefHeight="604.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.informationmanagement.viewer.WarningUIController">
   <children>
     <Pane layoutX="0.0" layoutY="0.0" prefHeight="604.0" prefWidth="640.0">
       <children>
@@ -89,7 +89,7 @@
         <Pane layoutX="61.0" layoutY="39.0" opacity="0.75" prefHeight="244.0" prefWidth="518.0" style="-fx-background-color: #313330;">
           <children>
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="BLACK" height="15.1328125" layoutX="0.0" layoutY="0.0" stroke="BLACK" strokeType="INSIDE" width="518.0" />
-            <TableView editable="false" layoutX="14.0" layoutY="28.0" opacity="1.0" prefHeight="188.0" prefWidth="439.0" style="" tableMenuButtonVisible="true">
+            <TableView fx:id="warningsTable" editable="false" layoutX="14.0" layoutY="28.0" opacity="1.0" prefHeight="188.0" prefWidth="439.0" style="" tableMenuButtonVisible="true">
               <columns>
                 <TableColumn editable="false" maxWidth="5000.0" minWidth="10.0" prefWidth="114.0" resizable="false" sortable="false" text="Remetente" />
                 <TableColumn editable="false" maxWidth="5000.0" minWidth="10.0" prefWidth="112.0" resizable="false" sortable="false" text="Assunto" />

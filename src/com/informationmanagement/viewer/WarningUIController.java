@@ -5,6 +5,7 @@
  */
 package com.informationmanagement.viewer;
 
+import com.informationmanagement.model.WarningModel;
 import java.io.IOException;
 import java.net.URL;
 import java.util.Optional;
@@ -19,6 +20,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.ButtonType;
+import javafx.scene.control.TableView;
 import javafx.stage.Stage;
 
 /**
@@ -27,10 +29,19 @@ import javafx.stage.Stage;
  * @author claudio
  */
 public class WarningUIController implements Initializable {
-
-    /**
-     * Initializes the controller class.
-     */
+    private WarningModel warning;
+    @FXML
+    private TableView warningsTable;
+    
+    @Override
+    public void initialize(URL url, ResourceBundle rb) {
+        
+    }   
+    
+    public void initController(){
+        
+    }
+    
     @FXML
     private void logOut(ActionEvent event) throws IOException{
         Alert alert = new Alert(AlertType.CONFIRMATION);
@@ -112,14 +123,6 @@ public class WarningUIController implements Initializable {
         if (result.get() == ButtonType.OK){
             
         }
-    }
-    
-    
-    
-    
-    @Override
-    public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-    }    
+    } 
     
 }
