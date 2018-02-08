@@ -17,7 +17,7 @@ public class WarningModel extends WebServiceConnection{
     private String description;
     private String severity;
     private String subject;
-    private String URI = "http://192.168.1.20:8081/WebServiceIM/warningsInformation?administrator_email="; //later put in default
+    private String URI = PATH + "warningsInformation?administrator_email="; //later put in default
 
     public WarningModel(int informationWarningId, String description, 
             String severity, String subject, String userEmailSend) {

@@ -10,6 +10,8 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.Optional;
 import java.util.ResourceBundle;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -35,11 +37,12 @@ public class WarningUIController implements Initializable {
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        
+        //ObservableList<String> list = FXCollections.observableArrayList("claudio","claudio");
+        //warningsTable.setItems(list);
     }   
     
     public void initController(){
-        
+        warningsTable.getItems().add("caludio");
     }
     
     @FXML

@@ -19,7 +19,7 @@ public class UserModel extends WebServiceConnection{
     private String userTypes_id_type;
     private String department;
     private String position;
-    private String URI = "http://192.168.1.20:8081/WebServiceIM/user.php?email="; 
+    private String URI = PATH + "user.php?email="; 
     
     public UserModel(String email, String password, String firstName, String lastName,String department,String position){
         this.email = email;

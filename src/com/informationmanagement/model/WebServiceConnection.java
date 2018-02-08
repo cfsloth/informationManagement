@@ -5,7 +5,6 @@
  */
 package com.informationmanagement.model;
 
-import com.google.gson.Gson;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
@@ -23,6 +22,7 @@ import java.util.Scanner;
  * @author Claudio
  */
 public abstract class WebServiceConnection {
+    final String PATH = "http://192.168.1.3:8081/WebServiceIM/" ;
     
     public String getRequest(String urlToRead) throws Exception {
         StringBuilder result = new StringBuilder();
