@@ -62,7 +62,7 @@ public class UserModel extends WebServiceConnection{
         this.userTypes_id_type = userTypes_id_type;
     }
 
-    public String getURI() {
+        public String getURI() {
         return URI;
     }
 
@@ -110,4 +110,6 @@ public class UserModel extends WebServiceConnection{
     public void setPosition(String position) {
         this.position = position;
     }
+    
+    
 }

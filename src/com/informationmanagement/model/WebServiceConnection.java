@@ -22,7 +22,7 @@ import java.util.Scanner;
  * @author Claudio
  */
 public abstract class WebServiceConnection {
-    final String PATH = "http://172.26.78.209:8081/WebServiceIM/" ;
+    final String PATH = "http://172.26.53.157:8081/WebServiceIM/" ;
     
     public String getRequest(String urlToRead) throws Exception {
         StringBuilder result = new StringBuilder();
@@ -34,25 +34,68 @@ public abstract class WebServiceConnection {
         while ((line = rd.readLine()) != null) {
             result.append(line);
         }
-        //Gson a = new Gson().fromJson(line,User.class);
         rd.close();
         return result.toString();
     }
     
-    public void putRequest(String urlToRead) throws MalformedURLException, ProtocolException, IOException{
+    /*Post data is done */
+    public void postRequest(String urlToRead,String json) throws MalformedURLException, ProtocolException, IOException, Exception{
+        URL url = new URL(urlToRead);
+        HttpURLConnection httpCon = (HttpURLConnection) url.openConnection();
+        httpCon.setDoOutput(true);
+        httpCon.setRequestProperty("Content-Type", "application/json");
+        httpCon.setRequestMethod("POST");
+        OutputStreamWriter out = new OutputStreamWriter(httpCon.getOutputStream());
+        out.write(json);
+        out.close();
+        InputStream inputStream = httpCon.getInputStream();
+        String text = "";
+        try (Scanner scanner = new Scanner(inputStream, StandardCharsets.UTF_8.name())) {
+            text = scanner.useDelimiter("\\A").next();
+        }
+        if(!text.equals("SUCESS")){
+            throw new Exception("Json data was not recognized!");
+        }
+    }
+    
+    /*Put request done sucessfully */
+    public void putRequest(String urlToRead, String json) throws MalformedURLException, ProtocolException, IOException, Exception{
         URL url = new URL(urlToRead);
         HttpURLConnection httpCon = (HttpURLConnection) url.openConnection();
         httpCon.setDoOutput(true);
         httpCon.setRequestProperty("Content-Type", "application/json");
         httpCon.setRequestMethod("PUT");
         OutputStreamWriter out = new OutputStreamWriter(httpCon.getOutputStream());
-        out.write("body");
+        out.write(json);
         out.close();
         InputStream inputStream = httpCon.getInputStream();
-        String text = null;
+        String text = "";
+        try (Scanner scanner = new Scanner(inputStream, StandardCharsets.UTF_8.name())) {
+            text = scanner.useDelimiter("\\A").next();
+        } 
+        if(!text.equals("SUCESS")){
+            throw new Exception("Json data was not recognized!");
+        }
+    }
+    
+    public void deleteRequest(String urlToRead,String json) throws MalformedURLException, ProtocolException, IOException, Exception{
+        URL url = new URL(urlToRead);
+        HttpURLConnection httpCon = (HttpURLConnection) url.openConnection();
+        httpCon.setDoOutput(true);
+        httpCon.setRequestProperty("Content-Type", "application/json");
+        httpCon.setRequestMethod("DELETE");
+        OutputStreamWriter out = new OutputStreamWriter(httpCon.getOutputStream());
+        out.write(json);
+        out.close();
+        InputStream inputStream = httpCon.getInputStream();
+        String text = "";
         try (Scanner scanner = new Scanner(inputStream, StandardCharsets.UTF_8.name())) {
             text = scanner.useDelimiter("\\A").next();
         } 
         System.out.println(text);
+        if(!text.equals("SUCESS")){
+            throw new Exception("Json data was not recognized!");
         }
     }
+    
+}
