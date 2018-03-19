@@ -21,10 +21,10 @@ public class UserController {
         this.loginUI= loginUI;
     }
     
-    //Complete
+    //Need to upgrade this to trying to enter the system with a deleted user
     public int verifyUser(String email, String password) throws Exception{
         UserModel model = new UserModel();
-        if(password.equals(model.getUser(email).getPassword())){
+        if(password.equals(model.getUser(email).getPassword()) &&  "0".equals(model.getUser(email).getDeleted())){
             return 1;
         }
         return 0;

@@ -96,6 +96,5 @@ public abstract class WebServiceConnection {
         if(!text.equals("SUCESS")){
             throw new Exception("Json data was not recognized!");
         }
-    }
-    
+    }    
 }

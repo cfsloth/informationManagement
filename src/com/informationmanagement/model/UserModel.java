@@ -19,6 +19,7 @@ public class UserModel extends WebServiceConnection{
     private String userTypes_id_type;
     private String department;
     private String position;
+    private String deleted;
     private String URI = PATH + "user.php?email="; 
     
     public UserModel(String email, String password, String firstName, String lastName,String department,String position){
@@ -110,6 +111,12 @@ public class UserModel extends WebServiceConnection{
     public void setPosition(String position) {
         this.position = position;
     }
-    
-    
+
+    public String getDeleted() {
+        return deleted;
+    }
+
+    public void setDeleted(String deleted) {
+        this.deleted = deleted;
+    }
 }
