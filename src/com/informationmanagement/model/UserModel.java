@@ -6,6 +6,8 @@
 package com.informationmanagement.model;
 
 import com.google.gson.Gson;
+import java.io.IOException;
+import java.net.ProtocolException;
 
 /**
  *
@@ -20,7 +22,7 @@ public class UserModel extends WebServiceConnection{
     private String department;
     private String position;
     private String deleted;
-    private String URI = PATH + "user.php?email="; 
+    private String URI = PATH + "user.php"; 
     
     public UserModel(String email, String password, String firstName, String lastName,String department,String position){
         this.email = email;
@@ -38,13 +40,18 @@ public class UserModel extends WebServiceConnection{
     }
     
     public UserModel getUser(String email) throws Exception {
-        String result = super.getRequest(URI + email);
+        String result = super.getRequest(URI + "?email=" + email);
         Gson a = new Gson();
         UserModel user = a.fromJson(result, UserModel.class);
         if(user.getFirstName() == null){
             throw new Exception("User not found in database!");
         }
         return user;
+    }
+    
+    //Put to database
+    public void setUserPassword(String json) throws IOException, ProtocolException, Exception{
+        super.putRequest(URI,json);
     }
     
     public String getEmail() {

@@ -40,14 +40,18 @@
           <children>
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="BLACK" height="14.0" layoutX="0.0" layoutY="0.0" stroke="BLACK" strokeType="INSIDE" width="454.0" />
             <Label layoutX="14.0" layoutY="0.0" prefWidth="440.0" text="Change Password" textFill="WHITE" />
-            <TextField layoutX="27.0" layoutY="42.0" prefWidth="247.0" promptText="Insert Old Password" style="-fx-background-color: black " />
-            <TextField layoutX="27.0" layoutY="79.0" prefWidth="247.0" promptText="Insert New Password" style="-fx-background-color: black " />
-            <TextField layoutX="27.0" layoutY="117.0" prefWidth="247.0" promptText="Insert New Password Again" style="-fx-background-color: black ;" />
-            <ImageView fitHeight="87.75" fitWidth="117.0" layoutX="325.0" layoutY="42.0" pickOnBounds="true" preserveRatio="true">
-              <image>
-                <Image url="@../images/678134-sign-check-512.png" />
-              </image>
-            </ImageView>
+            <TextField fx:id="oldPassword" layoutX="27.0" layoutY="42.0" prefWidth="247.0" promptText="Insert Old Password" style="-fx-background-color: black " />
+            <TextField fx:id="newPassword" layoutX="27.0" layoutY="79.0" prefWidth="247.0" promptText="Insert New Password" style="-fx-background-color: black " />
+            <TextField fx:id="newPassword2" layoutX="27.0" layoutY="117.0" prefWidth="247.0" promptText="Insert New Password Again" style="-fx-background-color: black ;" />
+                  <Button layoutX="321.0" layoutY="37.0" mnemonicParsing="false" onAction="#changePassword" style="-fx-border-color: transparent; -fx-border-width: 0; -fx-background-color: transparent;">
+                     <graphic>
+                  <ImageView fitHeight="76.0" fitWidth="99.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                      <Image url="@../images/678134-sign-check-512.png" />
+                    </image>
+                  </ImageView>
+                     </graphic>
+                  </Button>
           </children>
         </Pane>
         <ImageView fitHeight="74.0" fitWidth="74.0" layoutX="552.0" layoutY="505.0" opacity="0.75" pickOnBounds="true" preserveRatio="true" rotate="0.0">

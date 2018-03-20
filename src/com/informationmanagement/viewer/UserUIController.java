@@ -5,11 +5,14 @@
  */
 package com.informationmanagement.viewer;
 
+import com.informationmanagement.controller.UserController;
 import com.informationmanagement.model.UserModel;
 import java.io.IOException;
 import java.net.URL;
 import java.util.Optional;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -42,6 +45,20 @@ public class UserUIController implements Initializable {
     private TextField userDepartment;
     @FXML 
     private TextField userPosition;
+    @FXML 
+    private TextField oldPassword;
+    @FXML
+    private TextField newPassword;
+    @FXML
+    private TextField newPassword2;
+    
+     /**
+     * Initializes the controller class.
+     */
+    @Override
+    public void initialize(URL url, ResourceBundle rb) {
+        
+    }
     
     public void initData(UserModel model){
         this.model = model;
@@ -73,7 +90,7 @@ public class UserUIController implements Initializable {
         } 
     }
     
-      @FXML
+    @FXML
     private void goHome(ActionEvent event) throws IOException{
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle("Go to Main Menu");
@@ -85,18 +102,40 @@ public class UserUIController implements Initializable {
             System.out.println("Changing to Main Menu\n");
             Node source = (Node) event.getSource();
             Stage stage = (Stage) source.getScene().getWindow();
-            Parent menu = FXMLLoader.load(getClass().getResource("MenuUI.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("MenuUI.fxml"));
+            Parent menu = loader.load();
+            MenuUIController controller = loader.<MenuUIController>getController();
+            controller.initData(this.model);
             Scene scene = new Scene(menu);
             stage.setScene(scene);
         } 
     }
     
-    /**
-     * Initializes the controller class.
-     */
-    @Override
-    public void initialize(URL url, ResourceBundle rb) {
-        
-    }    
-    
+    @FXML
+    private void changePassword(ActionEvent event) throws IOException{
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Changing Password");
+        alert.setHeaderText("Do you really wish to change the password?");
+        Optional<ButtonType> result = alert.showAndWait();
+        if (result.get() == ButtonType.OK){
+            UserController userC = new UserController(model,this);
+            try {
+                boolean sucess = userC.changePassword(this.model,oldPassword.getText(), newPassword.getText(), newPassword2.getText());
+                if(sucess){
+                    System.out.println("");
+                    Alert confirmation = new Alert(Alert.AlertType.INFORMATION);
+                    confirmation.setTitle("Password Update");
+                    confirmation.setHeaderText("Update");
+                    confirmation.setContentText("Password was updated with sucess!");
+                    confirmation.showAndWait();
+                }
+            } catch (Exception ex) {
+                Alert error = new Alert(Alert.AlertType.ERROR);
+                error.setTitle("Password Not Updated");
+                error.setHeaderText("Error");
+                error.setContentText("Password could not be update");
+                error.showAndWait();
+            }
+        }
+    }
 }

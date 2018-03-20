@@ -25,8 +25,9 @@ public class Tests extends TestCase {
         Gson b = new Gson();
         UserModel user = new UserModel();
         user.setEmail("simaocunha@gmail.com");
+        user.setPassword("simaosaborosa");
         String c = b.toJson(user);
-        a.deleteRequest("http://172.26.53.157:8081/WebServiceIM/user.php",c);
-        //a.putRequest("http://172.26.53.157:8081/WebServiceIM/user.php");
+        //a.deleteRequest("http://172.26.53.157:8081/WebServiceIM/user.php",c);
+        a.putRequest("http://172.26.53.157:8081/WebServiceIM/user.php",c);
     }
 }

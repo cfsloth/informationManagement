@@ -59,7 +59,7 @@ public abstract class WebServiceConnection {
     }
     
     /*Put request done sucessfully */
-    public void putRequest(String urlToRead, String json) throws MalformedURLException, ProtocolException, IOException, Exception{
+public void putRequest(String urlToRead, String json) throws MalformedURLException, ProtocolException, IOException, Exception{
         URL url = new URL(urlToRead);
         HttpURLConnection httpCon = (HttpURLConnection) url.openConnection();
         httpCon.setDoOutput(true);
