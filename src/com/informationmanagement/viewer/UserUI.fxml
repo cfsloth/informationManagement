@@ -54,11 +54,15 @@
                   </Button>
           </children>
         </Pane>
-        <ImageView fitHeight="74.0" fitWidth="74.0" layoutX="552.0" layoutY="505.0" opacity="0.75" pickOnBounds="true" preserveRatio="true" rotate="0.0">
-          <image>
-            <Image url="@../images/green-back-button-icon-65921.png" />
-          </image>
-        </ImageView>
+            <Button layoutX="516.0" layoutY="497.0" mnemonicParsing="false" onAction="#goHome" style="-fx-background-color: transparent;">
+               <graphic>
+              <ImageView fitHeight="74.0" fitWidth="74.0" opacity="0.75" pickOnBounds="true" preserveRatio="true">
+                <image>
+                  <Image url="@../images/green-back-button-icon-65921.png" />
+                </image>
+              </ImageView>
+               </graphic>
+            </Button>
       </children>
     </Pane>
     <Rectangle arcHeight="5.0" arcWidth="5.0" fill="BLACK" height="22.0" layoutX="0.0" layoutY="0.0" opacity="0.7" stroke="BLACK" strokeType="INSIDE" width="640.0" />
