@@ -8,14 +8,13 @@ package com.informationmanagement.model;
 import com.google.gson.Gson;
 import java.io.IOException;
 import java.net.ProtocolException;
-import java.util.ArrayList;
 
 /**
  *
  * @author Claudio
  */
 public class UserModel extends WebServiceConnection{
-    private String user_id;
+    private String id_user;
     private String email;
     private String password;
     private String firstName;
@@ -57,10 +56,6 @@ public class UserModel extends WebServiceConnection{
             throw new Exception("User not found in database!");
         }
         return user;
-    }
-    
-    public ArrayList<UserModel> getAllUsersByIdType(int id){
-        return new ArrayList<UserModel>();
     }
     
     //Put to database
@@ -132,11 +127,11 @@ public class UserModel extends WebServiceConnection{
         this.deleted = deleted;
     }
 
-    public String getUser_id() {
-        return user_id;
+    public String getId_user() {
+        return id_user;
     }
 
-    public void setUser_id(String user_id) {
-        this.user_id = user_id;
+    public void setId_user(String id_user) {
+        this.id_user = id_user;
     }
 }

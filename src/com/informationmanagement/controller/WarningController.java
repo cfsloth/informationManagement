@@ -26,11 +26,7 @@ public class WarningController {
     public WarningModel getWarningByUser(String email) throws Exception{
         return this.warningModel.getWarningByUser(email);
     }
-    
-    private int manageUser(){
-        return 0;
-    }
-    
+   
     public void postWarning() throws Exception{
         this.warningModel.postWarning(this.warningModel);
     }

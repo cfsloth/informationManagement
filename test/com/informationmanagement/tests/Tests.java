@@ -5,9 +5,7 @@
  */
 package com.informationmanagement.tests;
 
-import com.google.gson.Gson;
-import com.informationmanagement.model.UserModel;
-import com.informationmanagement.model.WebServiceConnection;
+import com.informationmanagement.model.WarningModel;
 import junit.framework.TestCase;
 
 /**
@@ -21,13 +19,15 @@ public class Tests extends TestCase {
         //String b = a.getRequest("http://192.168.1.143:8081/WebServiceIM/"
           //      + "user.php?email=claudio2filipesilvagoncalves@gmail.com");
         //System.out.println(b);
-        WebServiceConnection a = new WebServiceConnection() {};
-        Gson b = new Gson();
-        UserModel user = new UserModel();
-        user.setEmail("simaocunha@gmail.com");
-        user.setPassword("simaosaborosa");
-        String c = b.toJson(user);
+        //WebServiceConnection a = new WebServiceConnection() {};
+        //Gson b = new Gson();
+        //UserModel user = new UserModel();
+        //user.setEmail("simaocunha@gmail.com");
+        //user.setPassword("simaosaborosa");
+        //String c = b.toJson(user);
         //a.deleteRequest("http://172.26.53.157:8081/WebServiceIM/user.php",c);
-        a.putRequest("http://172.26.53.157:8081/WebServiceIM/user.php",c);
+        //a.putRequest("http://172.26.53.157:8081/WebServiceIM/user.php",c);
+        WarningModel a = new WarningModel();
+        a.getNextAdmin();
     }
 }

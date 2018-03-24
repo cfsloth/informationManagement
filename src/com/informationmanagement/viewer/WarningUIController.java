@@ -144,7 +144,7 @@ public class WarningUIController implements Initializable {
             try{
                 WarningModel newWarning = new WarningModel(0,this.description.getText(),
                    this.severity.getSelectionModel().getSelectedItem().toString(),
-                    this.subjects.getText(),this.user.getUser_id());
+                    this.subjects.getText(),Integer.parseInt(this.user.getId_user()));
                 WarningController wController = new WarningController(newWarning,this);
                 wController.postWarning();
                 Alert confirmation = new Alert(AlertType.CONFIRMATION);

@@ -15,16 +15,17 @@ import java.net.ProtocolException;
  */
 public class WarningModel extends WebServiceConnection{
     private int informationWarningId;
-    private String userEmailSend;
+    private int user_sending_id;
     private String description;
     private String severity;
     private String subject;
+    private int user_receiving_id;
     private String URI = PATH + "warningsInformation.php"; //later put in default
 
     public WarningModel(int informationWarningId, String description, 
-            String severity, String subject, String userEmailSend) {
+            String severity, String subject, int user_sending_id) {
         this.informationWarningId = informationWarningId;
-        this.userEmailSend = userEmailSend;
+        this.user_sending_id = user_sending_id;
         this.description = description;
         this.severity = severity;
         this.subject = subject;
@@ -36,16 +37,19 @@ public class WarningModel extends WebServiceConnection{
     }
     
     public WarningModel getWarningByUser(String email) throws Exception{
-        String result = super.getRequest(URI + "?email=" + email);
+       return new WarningModel();
+    }
+    
+    public int getNextAdmin() throws Exception{
+        String result = super.getRequest(URI + "?next_administrator");
         Gson a = new Gson();
-        WarningModel warning = a.fromJson(result, WarningModel.class);
-        if(warning.getUserEmailSend() == null){
-            throw new Exception("Warnings not found in database!");
-        }
-        return warning;
+        WarningModel model = a.fromJson(result,WarningModel.class);
+        System.out.println(model.user_receiving_id);
+        return model.user_receiving_id;
     }
     
     public void postWarning(WarningModel warning) throws IOException, ProtocolException, Exception{
+        warning.setUser_receiving_id(warning.getNextAdmin());
         Gson gson = new Gson();
         String json  = gson.toJson(warning);
         super.postRequest(URI,json);
@@ -58,15 +62,7 @@ public class WarningModel extends WebServiceConnection{
     public void setInformationWarningId(int informationWarningId) {
         this.informationWarningId = informationWarningId;
     }
-
-    public String getUserEmailSend() {
-        return userEmailSend;
-    }
-
-    public void setUserEmailSend(String userEmailSend) {
-        this.userEmailSend = userEmailSend;
-    }
-
+    
     public String getDescription() {
         return description;
     }
@@ -90,5 +86,12 @@ public class WarningModel extends WebServiceConnection{
     public void setSubject(String subject) {
         this.subject = subject;
     }
-    
+
+    public int getUser_receiving_id() {
+        return user_receiving_id;
+    }
+
+    public void setUser_receiving_id(int user_receiving_id) {
+        this.user_receiving_id = user_receiving_id;
+    }
 }
