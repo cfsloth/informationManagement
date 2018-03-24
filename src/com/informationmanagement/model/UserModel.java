@@ -8,12 +8,14 @@ package com.informationmanagement.model;
 import com.google.gson.Gson;
 import java.io.IOException;
 import java.net.ProtocolException;
+import java.util.ArrayList;
 
 /**
  *
  * @author Claudio
  */
 public class UserModel extends WebServiceConnection{
+    private String user_id;
     private String email;
     private String password;
     private String firstName;
@@ -39,6 +41,14 @@ public class UserModel extends WebServiceConnection{
         
     }
     
+    public String getTypeofUser(){
+        if(this.getUserTypes_id_type().equals("2")){
+            return "Operário";
+        }else{
+            return "Administrador";
+        }
+    }
+        
     public UserModel getUser(String email) throws Exception {
         String result = super.getRequest(URI + "?email=" + email);
         Gson a = new Gson();
@@ -47,6 +57,10 @@ public class UserModel extends WebServiceConnection{
             throw new Exception("User not found in database!");
         }
         return user;
+    }
+    
+    public ArrayList<UserModel> getAllUsersByIdType(int id){
+        return new ArrayList<UserModel>();
     }
     
     //Put to database
@@ -69,15 +83,6 @@ public class UserModel extends WebServiceConnection{
     public void setUserTypes_id_type(String userTypes_id_type) {
         this.userTypes_id_type = userTypes_id_type;
     }
-
-        public String getURI() {
-        return URI;
-    }
-
-    public void setURI(String URI) {
-        this.URI = URI;
-    }
-    
     
     public String getPassword() {
         return password;
@@ -125,5 +130,13 @@ public class UserModel extends WebServiceConnection{
 
     public void setDeleted(String deleted) {
         this.deleted = deleted;
+    }
+
+    public String getUser_id() {
+        return user_id;
+    }
+
+    public void setUser_id(String user_id) {
+        this.user_id = user_id;
     }
 }

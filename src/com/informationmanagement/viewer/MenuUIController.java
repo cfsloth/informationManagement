@@ -28,7 +28,7 @@ import javafx.stage.Stage;
  * @author claudio
  */
 public class MenuUIController implements Initializable {
-    private UserModel model;
+    private UserModel userModel;
     @FXML
     private Label userName;
     @FXML
@@ -40,28 +40,23 @@ public class MenuUIController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {}
     
     public void initData(UserModel model){
-        this.model = model;
+        this.userModel = model;
         this.userName.setText(this.userName.getText() + " " + 
-                model.getFirstName() + " " + this.model.getLastName());
-        if(this.model.getUserTypes_id_type().equals("2")){
-            this.userType.setText(this.userType.getText() + " Operário");
-        }else{
-            this.userType.setText(this.userType.getText() + " Administrador");
-        }
-        this.model.setUserTypes_id_type(this.userType.getText());
+                model.getFirstName() + " " + this.userModel.getLastName());
+        this.userType.setText(this.userType.getText() + " " + model.getTypeofUser());
     }
 
     public UserModel getModel() {
-        return model;
+        return userModel;
     }
 
     public void setModel(UserModel model) {
-        this.model = model;
+        this.userModel = model;
     }
     
     @FXML
     private void logOut(ActionEvent event) throws IOException{
-        System.out.println(this.model.getFirstName());
+        System.out.println(this.userModel.getFirstName());
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle("Sign Out");
         alert.setHeaderText("Deseja mesmo sair do sistema?");
@@ -94,7 +89,7 @@ public class MenuUIController implements Initializable {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("UserUI.fxml"));
             Parent menu = loader.load();
             UserUIController controller = loader.<UserUIController>getController();
-            controller.initData(this.model);
+            controller.initData(this.userModel);
             Scene scene = new Scene(menu);
             stage.setScene(scene);
         } 
@@ -108,7 +103,7 @@ public class MenuUIController implements Initializable {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("UserUI.fxml"));
             Parent menu = loader.load();
             UserUIController controller = loader.<UserUIController>getController();
-            controller.initData(this.model);
+            controller.initData(this.userModel);
             Scene scene = new Scene(menu);
             stage.setScene(scene); 
     }
@@ -121,7 +116,7 @@ public class MenuUIController implements Initializable {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("WarningUI.fxml"));
         Parent menu = loader.load();
         WarningUIController controller = loader.<WarningUIController>getController();
-        controller.initController();
+        controller.initData(this.userModel);
         Scene scene = new Scene(menu);
         stage.setScene(scene);
     }

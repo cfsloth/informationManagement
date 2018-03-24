@@ -5,13 +5,13 @@
  */
 package com.informationmanagement.viewer;
 
+import com.informationmanagement.controller.WarningController;
+import com.informationmanagement.model.UserModel;
 import com.informationmanagement.model.WarningModel;
 import java.io.IOException;
 import java.net.URL;
 import java.util.Optional;
 import java.util.ResourceBundle;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -22,7 +22,11 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.ButtonType;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.Label;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 /**
@@ -31,18 +35,31 @@ import javafx.stage.Stage;
  * @author claudio
  */
 public class WarningUIController implements Initializable {
-    private WarningModel warning;
+    private UserModel user;
     @FXML
     private TableView warningsTable;
+    @FXML
+    private TextField subjects;
+    @FXML
+    private TextArea description;
+    @FXML 
+    private ComboBox severity;
+    @FXML
+    private Label userName;
+    @FXML
+    private Label userType;
     
     @Override
-    public void initialize(URL url, ResourceBundle rb) {
-        //ObservableList<String> list = FXCollections.observableArrayList("claudio","claudio");
-        //warningsTable.setItems(list);
-    }   
+    public void initialize(URL url, ResourceBundle rb) {}
     
-    public void initController(){
-        warningsTable.getItems().add("caludio");
+    public void initData(UserModel userModel){
+        this.user = userModel;
+        this.userName.setText(this.userName.getText() + userModel.getFirstName() 
+                + " " + user.getLastName());
+        this.userType.setText(this.userType.getText() + this.user.getTypeofUser());
+        severity.getItems().clear();
+        severity.getItems().addAll(
+        "1","2","3","4","5","6","7","8","9","10");
     }
     
     @FXML
@@ -53,7 +70,6 @@ public class WarningUIController implements Initializable {
         alert.setContentText("Se sair do sistema, dados que não tenham sido \nguardados serão perdidos.");
         Optional<ButtonType> result = alert.showAndWait();
         if (result.get() == ButtonType.OK){
-            // ... user chose OK
             System.out.println("Changing to Login");
             Node source = (Node) event.getSource();
             Stage stage = (Stage) source.getScene().getWindow();
@@ -111,6 +127,7 @@ public class WarningUIController implements Initializable {
         Optional<ButtonType> result = alert.showAndWait();
         if (result.get() == ButtonType.OK){
             
+            //Todo method
         }
     }
     
@@ -124,7 +141,31 @@ public class WarningUIController implements Initializable {
                 + "resolvido.");
         Optional<ButtonType> result = alert.showAndWait();
         if (result.get() == ButtonType.OK){
-            
+            try{
+                WarningModel newWarning = new WarningModel(0,this.description.getText(),
+                   this.severity.getSelectionModel().getSelectedItem().toString(),
+                    this.subjects.getText(),this.user.getUser_id());
+                WarningController wController = new WarningController(newWarning,this);
+                wController.postWarning();
+                Alert confirmation = new Alert(AlertType.CONFIRMATION);
+                confirmation.setTitle("Sucess");
+                confirmation.setHeaderText("Warning was submited!");
+                confirmation.setContentText("The warning was submited with sucess!");
+                confirmation.showAndWait();
+            }catch(NullPointerException e){
+                Alert error = new Alert(AlertType.ERROR);
+                error.setTitle("Error");
+                error.setHeaderText("Warning Could Not Be Submited!");
+                error.setContentText("Please fill all the data in the form.");
+                error.showAndWait();
+            } catch (Exception ex) {
+                System.out.println(ex);
+                Alert error = new Alert(AlertType.ERROR);
+                error.setTitle("Error");
+                error.setHeaderText("Warning Could Not Be Submited!");
+                error.setContentText("The warning could not be submited. Please contact an IT Manager!");
+                error.showAndWait();
+            }
         }
     } 
     

@@ -6,6 +6,8 @@
 package com.informationmanagement.model;
 
 import com.google.gson.Gson;
+import java.io.IOException;
+import java.net.ProtocolException;
 
 /**
  *
@@ -17,7 +19,7 @@ public class WarningModel extends WebServiceConnection{
     private String description;
     private String severity;
     private String subject;
-    private String URI = PATH + "warningsInformation?administrator_email="; //later put in default
+    private String URI = PATH + "warningsInformation.php"; //later put in default
 
     public WarningModel(int informationWarningId, String description, 
             String severity, String subject, String userEmailSend) {
@@ -28,18 +30,25 @@ public class WarningModel extends WebServiceConnection{
         this.subject = subject;
     }
     
+    
     public WarningModel(){
         
     }
     
     public WarningModel getWarningByUser(String email) throws Exception{
-        String result = super.getRequest(URI + email);
+        String result = super.getRequest(URI + "?email=" + email);
         Gson a = new Gson();
         WarningModel warning = a.fromJson(result, WarningModel.class);
         if(warning.getUserEmailSend() == null){
             throw new Exception("Warnings not found in database!");
         }
         return warning;
+    }
+    
+    public void postWarning(WarningModel warning) throws IOException, ProtocolException, Exception{
+        Gson gson = new Gson();
+        String json  = gson.toJson(warning);
+        super.postRequest(URI,json);
     }
     
     public int getInformationWarningId() {

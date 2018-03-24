@@ -17,7 +17,7 @@ public class WarningController {
     private WarningModel warningModel;
     private WarningUIController warningUI;
     private UserModel user;
-    
+        
     public WarningController(WarningModel warningModel, WarningUIController warningUI){
         this.warningModel = warningModel;
         this.warningUI = warningUI;
@@ -27,6 +27,15 @@ public class WarningController {
         return this.warningModel.getWarningByUser(email);
     }
     
+    private int manageUser(){
+        return 0;
+    }
+    
+    public void postWarning() throws Exception{
+        this.warningModel.postWarning(this.warningModel);
+    }
+    
+    /*Gets and Sets above this */
     public WarningModel getWarningModel() {
         return warningModel;
     }
