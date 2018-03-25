@@ -76,7 +76,7 @@
       </graphic>
     </Button>
     <Label fx:id="userCompleteName" layoutX="7.0" layoutY="2.0" minHeight="13.999908447265625" prefHeight="21.0" prefWidth="335.0" text="Utilizador:" textFill="WHITE" />
-    <Label fx:id="userType" layoutX="341.0" layoutY="2.0" prefHeight="21.000099182128906" prefWidth="227.0" text="Tipo de Utilizador :" textFill="WHITE" />
+    <Label fx:id="userType" layoutX="341.0" layoutY="2.0" prefHeight="21.000099182128906" prefWidth="227.0" text="Tipo de Utilizador : " textFill="WHITE" />
     <Button layoutX="593.0" layoutY="0.0" maxHeight="22.0" maxWidth="22.0" minHeight="22.0" minWidth="22.0" mnemonicParsing="false" onAction="#goHome" prefHeight="22.0" prefWidth="22.0" style="-fx-border-color: transparent;&#10;    -fx-border-width: 0;&#10;    -fx-background-radius: 0;&#10;    -fx-background-color: transparent;&#10;    -fx-font-family:&quot;Segoe UI&quot;, Helvetica, Arial, sans-serif;&#10;    -fx-font-size: 1em; /* 12 */&#10;    -fx-text-fill: #828282;" text="">
       <graphic>
         <ImageView fitHeight="21.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">

@@ -5,6 +5,7 @@
  */
 package com.informationmanagement.viewer;
 
+import com.informationmanagement.controller.LoginController;
 import com.informationmanagement.model.UserModel;
 import com.informationmanagement.controller.UserController;
 import java.net.URL;
@@ -51,8 +52,8 @@ public class LoginUIController implements Initializable {
         //Changing scenes
         try{
             UserModel model = new UserModel();
-            this.userController = new UserController(model,this);
-            int returnValue = userController.verifyUser(username.getText()+"", password.getText()+"");
+            LoginController loginController = new LoginController(model,this);
+            int returnValue = loginController.verifyUser(username.getText()+"", password.getText()+"");
             if(returnValue == 1){
                 System.out.println("Changing to MenuUI");
                 //Getting node

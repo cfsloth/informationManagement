@@ -79,19 +79,22 @@ public class WarningUIController implements Initializable {
         } 
     }
     
-     @FXML
+    @FXML
     private void goHome(ActionEvent event) throws IOException{
-        Alert alert = new Alert(AlertType.CONFIRMATION);
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle("Go to Main Menu");
         alert.setHeaderText("Deseja mesmo ir para o Menu Inicial?");
         alert.setContentText("Se sair do sistema, dados que não tenham sido \nguardados serão perdidos.");
         Optional<ButtonType> result = alert.showAndWait();
         if (result.get() == ButtonType.OK){
             // ... user chose OK
-            System.out.println("Changing to Main Menu");
+            System.out.println("Changing to Main Menu\n");
             Node source = (Node) event.getSource();
             Stage stage = (Stage) source.getScene().getWindow();
-            Parent menu = FXMLLoader.load(getClass().getResource("MenuUI.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("MenuUI.fxml"));
+            Parent menu = loader.load();
+            MenuUIController controller = loader.<MenuUIController>getController();
+            controller.initData(this.user);
             Scene scene = new Scene(menu);
             stage.setScene(scene);
         } 
@@ -109,12 +112,14 @@ public class WarningUIController implements Initializable {
             System.out.println("Changing to UserUI");
             Node source = (Node) event.getSource();
             Stage stage = (Stage) source.getScene().getWindow();
-            Parent menu = FXMLLoader.load(getClass().getResource("UserUI.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("UserUI.fxml"));
+            Parent menu = loader.load();
+            UserUIController controller = loader.<UserUIController>getController();
+            controller.initData(this.user);
             Scene scene = new Scene(menu);
             stage.setScene(scene);
         } 
     }
-    
     
     @FXML
     private void closeWarning(ActionEvent event){

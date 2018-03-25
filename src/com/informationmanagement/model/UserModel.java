@@ -51,11 +51,12 @@ public class UserModel extends WebServiceConnection{
     public UserModel getUser(String email) throws Exception {
         String result = super.getRequest(URI + "?email=" + email);
         Gson a = new Gson();
-        UserModel user = a.fromJson(result, UserModel.class);
-        if(user.getFirstName() == null){
+        try{
+            UserModel user = a.fromJson(result, UserModel.class);
+            return user;
+        }catch(Exception e){     
             throw new Exception("User not found in database!");
         }
-        return user;
     }
     
     //Put to database
