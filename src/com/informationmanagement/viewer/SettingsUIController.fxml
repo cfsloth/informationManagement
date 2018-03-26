@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.shape.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<fx:root id="AnchorPane" prefHeight="604.0" prefWidth="640.0" type="AnchorPane" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8">
+   <children>
+      <Pane prefHeight="604.0" prefWidth="640.0">
+         <children>
+            <ImageView fitHeight="604.0" fitWidth="640.0" pickOnBounds="true" smooth="false">
+               <image>
+                  <Image url="@../images/settings.jpg" />
+               </image>
+               <effect>
+                  <GaussianBlur radius="12.19" />
+               </effect>
+            </ImageView>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="BLACK" height="22.0" opacity="0.7" stroke="BLACK" strokeType="INSIDE" width="640.0" />
+            <Label fx:id="userName" layoutX="7.0" minHeight="13.999908447265625" prefHeight="21.0" prefWidth="335.0" text="Utilizador:" textFill="WHITE" />
+            <Label fx:id="userType" layoutX="296.0" layoutY="-1.0" prefHeight="21.0" prefWidth="227.0" text="Tipo de Utilizador :" textFill="WHITE" />
+            <Button layoutX="593.0" maxHeight="22.0" maxWidth="22.0" minHeight="22.0" minWidth="22.0" mnemonicParsing="false" onAction="#goToUserPage" prefHeight="22.0" prefWidth="22.0" style="-fx-border-color: transparent;&#10;    -fx-border-width: 0;&#10;    -fx-background-radius: 0;&#10;    -fx-background-color: transparent;&#10;    -fx-font-family:&quot;Segoe UI&quot;, Helvetica, Arial, sans-serif;&#10;    -fx-font-size: 1em; /* 12 */&#10;    -fx-text-fill: #828282;" text="">
+               <graphic>
+                  <ImageView fitHeight="21.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/profile.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button layoutX="615.0" maxHeight="22.0" maxWidth="22.0" minHeight="22.0" minWidth="22.0" mnemonicParsing="false" onAction="#logOut" prefHeight="22.0" prefWidth="22.0" style="-fx-border-color: transparent;&#10;    -fx-border-width: 0;&#10;    -fx-background-radius: 0;&#10;    -fx-background-color: transparent;&#10;    -fx-font-family:&quot;Segoe UI&quot;, Helvetica, Arial, sans-serif;&#10;    -fx-font-size: 1em; /* 12 */&#10;    -fx-text-fill: #828282;" text="">
+               <graphic>
+                  <ImageView disable="true" fitHeight="21.000099999997474" fitWidth="21.000099999997474" focusTraversable="true" pickOnBounds="true" preserveRatio="false" smooth="true">
+                     <image>
+                        <Image url="@../images/close_red.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Pane layoutX="34.0" layoutY="45.0" opacity="0.8" prefHeight="454.0" prefWidth="572.0" style="-fx-background-color: #313330;">
+               <children>
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="BLACK" height="15.0" opacity="0.7" stroke="BLACK" strokeType="INSIDE" width="572.0" />
+                  <Label prefHeight="17.0" prefWidth="258.0" text="Administration Settings" textFill="WHITE" />
+               </children>
+            </Pane>
+         </children>
+      </Pane>
+      <Button layoutX="526.0" layoutY="507.0" mnemonicParsing="false" onAction="#goHome" style="-fx-background-color: transparent;">
+         <graphic>
+            <ImageView fitHeight="74.0" fitWidth="74.0" opacity="0.75" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/green-back-button-icon-65921.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+   </children>
+</fx:root>
