@@ -16,14 +16,13 @@ import com.informationmanagement.viewer.WarningUIController;
 public class WarningController {
     private WarningModel warningModel;
     private WarningUIController warningUI;
-    private UserModel user;
         
     public WarningController(WarningModel warningModel, WarningUIController warningUI){
         this.warningModel = warningModel;
         this.warningUI = warningUI;
     }
     
-    public WarningModel getWarningByUser(String email) throws Exception{
+    public WarningModel[] getWarningByUser(String email) throws Exception{
         return this.warningModel.getWarningByUser(email);
     }
    

@@ -10,8 +10,14 @@ import com.informationmanagement.model.UserModel;
 import com.informationmanagement.model.WarningModel;
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -24,9 +30,11 @@ import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
+import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
 /**
@@ -35,7 +43,6 @@ import javafx.stage.Stage;
  * @author claudio
  */
 public class WarningUIController implements Initializable {
-    private UserModel user;
     @FXML
     private TableView warningsTable;
     @FXML
@@ -48,18 +55,51 @@ public class WarningUIController implements Initializable {
     private Label userName;
     @FXML
     private Label userType;
+    @FXML 
+    private TableColumn<WarningModel,String> adresser;
+    @FXML 
+    private TableColumn<WarningModel, String> subject;
+    @FXML
+    private TableColumn<WarningModel, String> severityTable;
+    @FXML 
+    private TableColumn<WarningModel, String> date;
+    @FXML 
+    private TableColumn<WarningModel,Integer> id;
+    @FXML 
+    private TableColumn<WarningModel,String> descriptionTable;
+    
+    private WarningController warningController;
+    private UserModel user;
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {}
     
+    public void initTableColumns(){
+        this.adresser.setCellValueFactory(new PropertyValueFactory<>("user_sending_email"));
+        this.subject.setCellValueFactory(new PropertyValueFactory<>("subject"));
+        this.severityTable.setCellValueFactory(new PropertyValueFactory<>("severity"));
+        this.date.setCellValueFactory(new PropertyValueFactory<>("date"));
+        this.id.setCellValueFactory(new PropertyValueFactory<>("information_warning_id"));
+        this.descriptionTable.setCellValueFactory(new PropertyValueFactory<>("description"));
+        try {
+            ObservableList<WarningModel> list = FXCollections.observableArrayList(
+                    this.warningController.getWarningByUser(user.getEmail()));
+            this.warningsTable.setItems(list);
+        } catch (Exception ex) {
+            Logger.getLogger(WarningUIController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
     public void initData(UserModel userModel){
         this.user = userModel;
+        this.warningController = new WarningController(new WarningModel(),this);
         this.userName.setText(this.userName.getText() + userModel.getFirstName() 
                 + " " + user.getLastName());
         this.userType.setText(this.userType.getText() + this.user.getTypeofUser());
         severity.getItems().clear();
         severity.getItems().addAll(
         "1","2","3","4","5","6","7","8","9","10");
+        initTableColumns();
     }
     
     @FXML
@@ -100,7 +140,7 @@ public class WarningUIController implements Initializable {
         } 
     }
     
-     @FXML
+    @FXML
     private void goToUserPage(ActionEvent event) throws IOException{
         Alert alert = new Alert(AlertType.CONFIRMATION);
         alert.setTitle("Go to User Page");
@@ -150,8 +190,8 @@ public class WarningUIController implements Initializable {
                 WarningModel newWarning = new WarningModel(0,this.description.getText(),
                    this.severity.getSelectionModel().getSelectedItem().toString(),
                     this.subjects.getText(),Integer.parseInt(this.user.getId_user()));
-                WarningController wController = new WarningController(newWarning,this);
-                wController.postWarning();
+                this.warningController.setWarningModel(newWarning);
+                this.warningController.postWarning();
                 Alert confirmation = new Alert(AlertType.CONFIRMATION);
                 confirmation.setTitle("Sucess");
                 confirmation.setHeaderText("Warning was submited!");

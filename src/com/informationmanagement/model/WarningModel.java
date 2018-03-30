@@ -16,9 +16,11 @@ import java.net.ProtocolException;
 public class WarningModel extends WebServiceConnection{
     private int informationWarningId;
     private int user_sending_id;
+    private String user_sending_email;
     private String description;
     private String severity;
     private String subject;
+    private String date;
     private int user_receiving_id;
     private String URI = PATH + "warningsInformation.php"; //later put in default
 
@@ -31,13 +33,24 @@ public class WarningModel extends WebServiceConnection{
         this.subject = subject;
     }
     
+    //This constroctor is for the GUI
+    public WarningModel(int id,String userSendingEmail,String subject,String severityTable,String date){
+        this.informationWarningId = id;
+        this.user_sending_email = userSendingEmail;
+        this.subject = subject;
+        this.severity = severityTable;
+        this.date = date;
+    }
     
     public WarningModel(){
         
     }
     
-    public WarningModel getWarningByUser(String email) throws Exception{
-       return new WarningModel();
+    public WarningModel[] getWarningByUser(String email) throws Exception{
+        String result = super.getRequest(URI + "?administrator_email=" + email);
+        System.out.println(result);
+        Gson a = new Gson();
+        return a.fromJson(result, WarningModel[].class);
     }
     
     public int getNextAdmin() throws Exception{
@@ -93,5 +106,29 @@ public class WarningModel extends WebServiceConnection{
 
     public void setUser_receiving_id(int user_receiving_id) {
         this.user_receiving_id = user_receiving_id;
+    }
+
+    public int getUser_sending_id() {
+        return user_sending_id;
+    }
+
+    public void setUser_sending_id(int user_sending_id) {
+        this.user_sending_id = user_sending_id;
+    }
+
+    public String getAdresser() {
+        return this.user_sending_email;
+    }
+
+    public void setAdresser(String user_sending_email) {
+        this.user_sending_email = user_sending_email;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
     }
 }

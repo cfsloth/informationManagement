@@ -28,6 +28,6 @@ public class Tests extends TestCase {
         //a.deleteRequest("http://172.26.53.157:8081/WebServiceIM/user.php",c);
         //a.putRequest("http://172.26.53.157:8081/WebServiceIM/user.php",c);
         WarningModel a = new WarningModel();
-        a.getNextAdmin();
+        a.getWarningByUser("claudiofilipesilvagoncalves@gmail.com");
     }
 }
