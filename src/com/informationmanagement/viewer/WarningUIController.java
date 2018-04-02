@@ -10,8 +10,6 @@ import com.informationmanagement.model.UserModel;
 import com.informationmanagement.model.WarningModel;
 import java.io.IOException;
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Optional;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
@@ -56,7 +54,7 @@ public class WarningUIController implements Initializable {
     @FXML
     private Label userType;
     @FXML 
-    private TableColumn<WarningModel,String> adresser;
+    private TableColumn<WarningModel,String> userSendingEmail;
     @FXML 
     private TableColumn<WarningModel, String> subject;
     @FXML
@@ -64,7 +62,7 @@ public class WarningUIController implements Initializable {
     @FXML 
     private TableColumn<WarningModel, String> date;
     @FXML 
-    private TableColumn<WarningModel,Integer> id;
+    private TableColumn<WarningModel,Integer> warningId;
     @FXML 
     private TableColumn<WarningModel,String> descriptionTable;
     
@@ -75,11 +73,11 @@ public class WarningUIController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {}
     
     public void initTableColumns(){
-        this.adresser.setCellValueFactory(new PropertyValueFactory<>("user_sending_email"));
+        this.userSendingEmail.setCellValueFactory(new PropertyValueFactory<>("userEmailSend"));
         this.subject.setCellValueFactory(new PropertyValueFactory<>("subject"));
         this.severityTable.setCellValueFactory(new PropertyValueFactory<>("severity"));
         this.date.setCellValueFactory(new PropertyValueFactory<>("date"));
-        this.id.setCellValueFactory(new PropertyValueFactory<>("information_warning_id"));
+        this.warningId.setCellValueFactory(new PropertyValueFactory<>("warningId"));
         this.descriptionTable.setCellValueFactory(new PropertyValueFactory<>("description"));
         try {
             ObservableList<WarningModel> list = FXCollections.observableArrayList(

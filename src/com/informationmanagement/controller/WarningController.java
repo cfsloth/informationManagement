@@ -5,7 +5,6 @@
  */
 package com.informationmanagement.controller;
 
-import com.informationmanagement.model.UserModel;
 import com.informationmanagement.model.WarningModel;
 import com.informationmanagement.viewer.WarningUIController;
 

@@ -22,7 +22,7 @@ import java.util.Scanner;
  * @author Claudio
  */
 public abstract class WebServiceConnection {
-    final String PATH = "http://192.168.31.108:8081/WebServiceIM/" ;
+    final String PATH = "http://172.26.2.18:8081/WebServiceIM/" ;
     
     public String getRequest(String urlToRead) throws Exception {
         StringBuilder result = new StringBuilder();

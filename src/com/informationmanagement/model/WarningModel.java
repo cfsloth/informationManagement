@@ -14,9 +14,9 @@ import java.net.ProtocolException;
  * @author Claudio
  */
 public class WarningModel extends WebServiceConnection{
-    private int informationWarningId;
+    private int warningId;
     private int user_sending_id;
-    private String user_sending_email;
+    private String userEmailSend;
     private String description;
     private String severity;
     private String subject;
@@ -26,7 +26,7 @@ public class WarningModel extends WebServiceConnection{
 
     public WarningModel(int informationWarningId, String description, 
             String severity, String subject, int user_sending_id) {
-        this.informationWarningId = informationWarningId;
+        this.warningId = informationWarningId;
         this.user_sending_id = user_sending_id;
         this.description = description;
         this.severity = severity;
@@ -34,9 +34,9 @@ public class WarningModel extends WebServiceConnection{
     }
     
     //This constroctor is for the GUI
-    public WarningModel(int id,String userSendingEmail,String subject,String severityTable,String date){
-        this.informationWarningId = id;
-        this.user_sending_email = userSendingEmail;
+    public WarningModel(int informationWarningId,String userSendingEmail,String subject,String severityTable,String date){
+        this.warningId = informationWarningId;
+        this.userEmailSend = userSendingEmail;
         this.subject = subject;
         this.severity = severityTable;
         this.date = date;
@@ -48,7 +48,7 @@ public class WarningModel extends WebServiceConnection{
     
     public WarningModel[] getWarningByUser(String email) throws Exception{
         String result = super.getRequest(URI + "?administrator_email=" + email);
-        System.out.println(result);
+        //System.out.println(result);
         Gson a = new Gson();
         return a.fromJson(result, WarningModel[].class);
     }
@@ -69,11 +69,11 @@ public class WarningModel extends WebServiceConnection{
     }
     
     public int getInformationWarningId() {
-        return informationWarningId;
+        return warningId;
     }
 
     public void setInformationWarningId(int informationWarningId) {
-        this.informationWarningId = informationWarningId;
+        this.warningId = informationWarningId;
     }
     
     public String getDescription() {
@@ -117,11 +117,11 @@ public class WarningModel extends WebServiceConnection{
     }
 
     public String getAdresser() {
-        return this.user_sending_email;
+        return this.userEmailSend;
     }
 
     public void setAdresser(String user_sending_email) {
-        this.user_sending_email = user_sending_email;
+        this.userEmailSend = user_sending_email;
     }
 
     public String getDate() {
