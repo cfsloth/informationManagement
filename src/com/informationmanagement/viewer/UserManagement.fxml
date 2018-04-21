@@ -21,10 +21,10 @@ and open the template in the editor.
          <children>
             <ImageView fitHeight="604.0" fitWidth="640.0" opacity="0.94" pickOnBounds="true">
                <image>
-                  <Image url="@../images/7337370010_b7f437f3c1_b.jpg" />
+                  <Image url="@../images/In-the-forest.jpg" />
                </image>
                <effect>
-                  <GaussianBlur />
+                  <GaussianBlur radius="8.53" />
                </effect>
             </ImageView>
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="BLACK" height="21.0" opacity="0.7" stroke="BLACK" strokeType="INSIDE" width="640.0" />
@@ -85,10 +85,16 @@ and open the template in the editor.
                   <TextField editable="false" layoutX="11.0" layoutY="117.0" prefHeight="25.0" prefWidth="262.0" promptText="Department" />
                   <TextField editable="false" layoutX="11.0" layoutY="159.0" prefHeight="25.0" prefWidth="262.0" promptText="Email" />
                   <CheckBox disable="true" layoutX="11.0" layoutY="197.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="262.0" text="Administrator" textFill="#ebe8e8" />
-                  <Button layoutX="197.0" layoutY="233.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="73.0" text="Edit" />
+                  <Button layoutX="224.0" layoutY="220.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="22.0" style="-fx-background-color: transparent;">
+                     <graphic>
+                        <ImageView fitHeight="36.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/edit.png" />
+                           </image>
+                        </ImageView>
+                     </graphic></Button>
                </children>
             </Pane>
-            <Separator layoutX="337.0" layoutY="36.0" orientation="VERTICAL" prefHeight="294.0" prefWidth="6.0" />
          </children>
       </Pane>
    </children>

@@ -6,6 +6,8 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
 
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.chart.*?>
 <?import javafx.scene.effect.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
@@ -14,8 +16,7 @@ and open the template in the editor.
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<fx:root id="AnchorPane" prefHeight="604.0" prefWidth="640.0" type="AnchorPane" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8">
+<fx:root id="AnchorPane" prefHeight="604.0" prefWidth="640.0" type="AnchorPane" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Pane prefHeight="604.0" prefWidth="640.0">
          <children>
@@ -48,12 +49,53 @@ and open the template in the editor.
                   </ImageView>
                </graphic>
             </Button>
-            <Pane layoutX="34.0" layoutY="45.0" opacity="0.8" prefHeight="454.0" prefWidth="572.0" style="-fx-background-color: #313330;">
+            <Pane layoutX="34.0" layoutY="35.0" opacity="0.7" prefHeight="227.0" prefWidth="572.0" style="-fx-background-color: #313330;">
                <children>
                   <Rectangle arcHeight="5.0" arcWidth="5.0" fill="BLACK" height="15.0" opacity="0.7" stroke="BLACK" strokeType="INSIDE" width="572.0" />
-                  <Label prefHeight="17.0" prefWidth="258.0" text="Administration Settings" textFill="WHITE" />
+                  <Label prefHeight="17.0" prefWidth="572.0" text="Request Chart" textFill="WHITE" />
+                  <BubbleChart layoutX="14.0" layoutY="27.0" prefHeight="197.0" prefWidth="544.0">
+                    <xAxis>
+                      <NumberAxis side="BOTTOM" />
+                    </xAxis>
+                    <yAxis>
+                      <NumberAxis side="LEFT" />
+                    </yAxis>
+                  </BubbleChart>
                </children>
             </Pane>
+            <Pane layoutX="34.0" layoutY="275.0" opacity="0.7" prefHeight="227.0" prefWidth="572.0" style="-fx-background-color: #313330;">
+               <children>
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="BLACK" height="15.0" opacity="0.7" stroke="BLACK" strokeType="INSIDE" width="572.0" />
+                  <Label prefHeight="17.0" prefWidth="572.0" text="User Charts" textFill="WHITE" />
+                  <BarChart layoutX="14.0" layoutY="19.0" prefHeight="190.0" prefWidth="258.0">
+                    <xAxis>
+                      <CategoryAxis side="BOTTOM" />
+                    </xAxis>
+                    <yAxis>
+                      <NumberAxis side="LEFT" />
+                    </yAxis>
+                  </BarChart>
+                  <PieChart layoutX="335.0" layoutY="29.0" prefHeight="170.0" prefWidth="216.0" />
+               </children>
+            </Pane>
+            <Button layoutX="267.0" maxHeight="22.0" maxWidth="22.0" minHeight="22.0" minWidth="22.0" mnemonicParsing="false" onAction="#goToUserPage" prefHeight="22.0" prefWidth="22.0" style="-fx-border-color: transparent;&#10;    -fx-border-width: 0;&#10;    -fx-background-radius: 0;&#10;    -fx-background-color: transparent;&#10;    -fx-font-family:&quot;Segoe UI&quot;, Helvetica, Arial, sans-serif;&#10;    -fx-font-size: 1em; /* 12 */&#10;    -fx-text-fill: #828282;" text="">
+               <graphic>
+                  <ImageView fitHeight="21.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/admin5.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button layoutX="569.0" layoutY="1.0" minHeight="21.0" minWidth="22.0" mnemonicParsing="false" onAction="#goHome" prefHeight="21.0" prefWidth="22.0" style="-fx-border-color: transparent;&#10;    -fx-border-width: 0;&#10;    -fx-background-radius: 0;&#10;    -fx-background-color: transparent;&#10;    -fx-font-family:&quot;Segoe UI&quot;, Helvetica, Arial, sans-serif;&#10;    -fx-font-size: 1em; /* 12 */&#10;    -fx-text-fill: #828282;" text="">
+               <graphic>
+                  <ImageView fitHeight="21.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/home-icon.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
          </children>
       </Pane>
       <Button layoutX="526.0" layoutY="507.0" mnemonicParsing="false" onAction="#goHome" style="-fx-background-color: transparent;">
