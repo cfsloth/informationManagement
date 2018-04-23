@@ -25,7 +25,7 @@ public class UserModel extends WebServiceConnection{
     private String deleted;
     private String URI = PATH + "user.php"; 
     
-    public UserModel(String email, String password, String firstName, String lastName,String department,String position){
+    public UserModel(String email, String password, String firstName, String lastName,String department,String position,String user_type){
         this.email = email;
         this.password = password;
         this.firstName = firstName;
@@ -33,6 +33,7 @@ public class UserModel extends WebServiceConnection{
         this.userTypes_id_type = "";
         this.department = department;
         this.position = position;
+        this.userTypes_id_type = user_type;
     }
     
     
@@ -57,6 +58,11 @@ public class UserModel extends WebServiceConnection{
         }catch(Exception e){     
             throw new Exception("User not found in database!");
         }
+    }
+    
+    public void postUser(UserModel model) throws Exception{
+        Gson a = new Gson();
+        super.postRequest(URI,a.toJson(model));
     }
     
     //Put to database

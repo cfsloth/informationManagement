@@ -7,7 +7,7 @@ package com.informationmanagement.controller;
 
 import com.google.gson.Gson;
 import com.informationmanagement.model.UserModel;
-import com.informationmanagement.viewer.LoginUIController;
+import com.informationmanagement.viewer.UserManagementUI;
 import com.informationmanagement.viewer.UserUIController;
 
 /**
@@ -15,14 +15,18 @@ import com.informationmanagement.viewer.UserUIController;
  * @author ASUS
  */
 public class UserController {
-    private UserModel user;
-    
+    private UserModel user;    
     private UserUIController userUI;
+    private UserManagementUI userMUI;
     
-   
     public UserController(UserModel user, UserUIController userUI){
         this.user = user;
         this.userUI = userUI;
+    }
+    
+    public UserController(UserModel user,UserManagementUI userM){
+        this.user = user;
+        this.userMUI = userM;
     }
     
     
